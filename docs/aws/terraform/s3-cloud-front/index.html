@@ -1,0 +1,136 @@
+<!DOCTYPE html><html lang="en-US"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><title>S3 & Cloud Front - Quickhacks</title><link rel="shortcut icon" href="https://albertattard.github.io/quickhacks/favicon.ico" type="image/x-icon"><link rel="stylesheet" href="https://albertattard.github.io/quickhacks/assets/css/quickhacks.css"> <script async src="https://www.googletagmanager.com/gtag/js?id=G-PE3DWJG4PK"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', "G-PE3DWJG4PK"); </script> <script type="text/javascript" src="https://albertattard.github.io/quickhacks/assets/js/vendor/lunr.min.js"></script> <script type="text/javascript" src="https://albertattard.github.io/quickhacks/assets/js/quickhacks.js"></script><meta name="viewport" content="width=device-width, initial-scale=1"><title>S3 &amp; Cloud Front | Quickhacks</title><meta name="generator" content="Jekyll v4.0.1" /><meta property="og:title" content="S3 &amp; Cloud Front" /><meta property="og:locale" content="en_US" /><meta name="description" content="Quickhacks" /><meta property="og:description" content="Quickhacks" /><link rel="canonical" href="https://albertattard.github.io/quickhacks/docs/aws/terraform/s3-cloud-front/" /><meta property="og:url" content="https://albertattard.github.io/quickhacks/docs/aws/terraform/s3-cloud-front/" /><meta property="og:site_name" content="Quickhacks" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="S3 &amp; Cloud Front" /> <script type="application/ld+json"> {"description":"Quickhacks","@type":"WebPage","headline":"S3 &amp; Cloud Front","url":"https://albertattard.github.io/quickhacks/docs/aws/terraform/s3-cloud-front/","@context":"https://schema.org"}</script><body> <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"> <symbol id="link" viewBox="0 0 16 16"><title>Link</title><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path> </symbol> </svg><div class="page-wrap"><div class="side-bar"><div class="site-header"> <a href="https://albertattard.github.io/quickhacks" class="site-title lh-tight"> Quickhacks </a> <button class="menu-button fs-3 js-main-nav-trigger" data-text-toggle="Hide" type="button">Menu</button></div><div class="navigation main-nav js-main-nav"><nav role="navigation" aria-label="Main navigation"><ul class="navigation-list"><li class="navigation-list-item active"><a href="https://albertattard.github.io/quickhacks/docs/aws/" class="navigation-list-link">AWS</a><ul class="navigation-list-child-list "><li class="navigation-list-item "> <a href="https://albertattard.github.io/quickhacks/docs/aws/cli/" class="navigation-list-link">CLI</a><li class="navigation-list-item active"> <a href="https://albertattard.github.io/quickhacks/docs/aws/terraform/" class="navigation-list-link">Terraform</a><ul class="navigation-list-child-list"><li class="navigation-list-item "> <a href="https://albertattard.github.io/quickhacks/docs/aws/terraform/commands/" class="navigation-list-link">Terraform Commands</a><li class="navigation-list-item "> <a href="https://albertattard.github.io/quickhacks/docs/aws/terraform/dynamodb/" class="navigation-list-link">DynamoDB</a><li class="navigation-list-item "> <a href="https://albertattard.github.io/quickhacks/docs/aws/terraform/ec2-publicly-accessible/" class="navigation-list-link">EC2 (Publicly Accessible)</a><li class="navigation-list-item "> <a href="https://albertattard.github.io/quickhacks/docs/aws/terraform/lambda-api-gateway/" class="navigation-list-link">Lambda (API Gateway)</a><li class="navigation-list-item "> <a href="https://albertattard.github.io/quickhacks/docs/aws/terraform/rds-postgres-publicly-accessible/" class="navigation-list-link">RDS Postgres (Publicly Accessible)</a><li class="navigation-list-item "> <a href="https://albertattard.github.io/quickhacks/docs/aws/terraform/redshift-cluster-publicly-accessible/" class="navigation-list-link">Redshift Cluster (Publicly Accessible)</a><li class="navigation-list-item active"> <a href="https://albertattard.github.io/quickhacks/docs/aws/terraform/s3-cloud-front/" class="navigation-list-link active">S3 & Cloud Front</a></ul></ul><li class="navigation-list-item"><a href="https://albertattard.github.io/quickhacks/docs/docker/" class="navigation-list-link">Docker</a><ul class="navigation-list-child-list "><li class="navigation-list-item "> <a href="https://albertattard.github.io/quickhacks/docs/docker/cassandra/" class="navigation-list-link">Cassandra</a><li class="navigation-list-item "> <a href="https://albertattard.github.io/quickhacks/docs/docker/jupyter/" class="navigation-list-link">Jupyter</a><li class="navigation-list-item "> <a href="https://albertattard.github.io/quickhacks/docs/docker/postgresql/" class="navigation-list-link">PostgreSQL</a></ul><li class="navigation-list-item"><a href="https://albertattard.github.io/quickhacks/docs/gradle/" class="navigation-list-link">Gradle</a><ul class="navigation-list-child-list "><li class="navigation-list-item "> <a href="https://albertattard.github.io/quickhacks/docs/cradle/gradlew/" class="navigation-list-link">Gradle Wrapper</a></ul><li class="navigation-list-item"><a href="https://albertattard.github.io/quickhacks/docs/java/" class="navigation-list-link">Java</a><ul class="navigation-list-child-list "><li class="navigation-list-item "> <a href="https://albertattard.github.io/quickhacks/docs/java/sdkman/" class="navigation-list-link">Setup environment (SDKMAN)</a></ul><li class="navigation-list-item"><a href="https://albertattard.github.io/quickhacks/docs/vue/" class="navigation-list-link">Vue</a><ul class="navigation-list-child-list "><li class="navigation-list-item "> <a href="https://albertattard.github.io/quickhacks/docs/vue/for-loop/" class="navigation-list-link">for Loop</a><li class="navigation-list-item "> <a href="https://albertattard.github.io/quickhacks/docs/vue/if-else-ladder/" class="navigation-list-link">if-else Ladder</a><li class="navigation-list-item "> <a href="https://albertattard.github.io/quickhacks/docs/vue/on-click/" class="navigation-list-link">on click</a><li class="navigation-list-item "> <a href="https://albertattard.github.io/quickhacks/docs/vue/on-mouseover/" class="navigation-list-link">on mouseover (on hover)</a><li class="navigation-list-item "> <a href="https://albertattard.github.io/quickhacks/docs/vue/show/" class="navigation-list-link">show</a><li class="navigation-list-item "> <a href="https://albertattard.github.io/quickhacks/docs/vue/style-binding/" class="navigation-list-link">style Binding</a></ul></ul></nav></div><footer class="site-footer"><p class="text-small text-grey-dk-000"><a href="https://hub.docker.com/search?type=image">Docker Hub</a></p></footer></div><div class="main-content-wrap js-main-content" tabindex="0"><div class="main-content"><div class="page-header js-page-header"><div class="search"><div class="search-input-wrap"> <input type="text" class="js-search-input search-input" tabindex="0" placeholder="Search Quickhacks" aria-label="Search Quickhacks" autocomplete="off"> <svg width="14" height="14" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" class="search-icon"><title>Search</title><g fill-rule="nonzero"><path d="M17.332 20.735c-5.537 0-10-4.6-10-10.247 0-5.646 4.463-10.247 10-10.247 5.536 0 10 4.601 10 10.247s-4.464 10.247-10 10.247zm0-4c3.3 0 6-2.783 6-6.247 0-3.463-2.7-6.247-6-6.247s-6 2.784-6 6.247c0 3.464 2.7 6.247 6 6.247z"/><path d="M11.672 13.791L.192 25.271 3.02 28.1 14.5 16.62z"/></g></svg></div><div class="js-search-results search-results-wrap"></div></div><ul class="list-style-none text-small aux-nav"><li class="d-inline-block my-0"><a href="https://github.com/albertattard/quickhacks">Quickhacks on GitHub</a></ul></div><div class="page"><nav class="breadcrumb-nav"><ol class="breadcrumb-nav-list"><li class="breadcrumb-nav-list-item"><a href="https://albertattard.github.io/quickhacks/docs/aws/">AWS</a><li class="breadcrumb-nav-list-item"><a href="">Terraform</a><li class="breadcrumb-nav-list-item"><span>S3 & Cloud Front</span></ol></nav><div id="main-content" class="page-content" role="main"><h1 id="s3--cloud-front"> <a href="#s3--cloud-front" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#link"></use></svg></a> S3 &amp; Cloud Front</h1><hr /><h2 id="terraform"> <a href="#terraform" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#link"></use></svg></a> Terraform</h2><div class="note"> <span class="title">&#9432; Note</span> {%- if include.details -%} <span class="details">{{ include.details }}</span> {%- endif -%}</div><h3 id="file-terraformtf"> <a href="#file-terraformtf" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#link"></use></svg></a> File: <code class="highlighter-rouge">terraform.tf</code></h3><p>The bucket <code class="highlighter-rouge">quickhacks-terraform</code> needs to be created beforehand. Refer to <a href="https://albertattard.github.io/quickhacks/docs/aws/cli/s3#create-bucket">create S3 bucket</a> for more information about that.</p><figure class="highlight"><pre><code class="language-terraform" data-lang="terraform"><span class="k">terraform</span> <span class="p">{</span>
+  <span class="nx">backend</span> <span class="s2">"s3"</span> <span class="p">{</span>
+    <span class="nx">bucket</span> <span class="p">=</span> <span class="s2">"quickhacks-terraform"</span>
+    <span class="nx">key</span>    <span class="p">=</span> <span class="s2">"aws/s3-cloud-front/terraform.tfstate"</span>
+    <span class="nx">region</span> <span class="p">=</span> <span class="s2">"eu-central-1"</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure><h3 id="file-providerstf"> <a href="#file-providerstf" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#link"></use></svg></a> File: <code class="highlighter-rouge">providers.tf</code></h3><figure class="highlight"><pre><code class="language-terraform" data-lang="terraform"><span class="k">provider</span> <span class="s2">"aws"</span> <span class="p">{</span>
+  <span class="nx">region</span> <span class="p">=</span> <span class="s2">"eu-central-1"</span>
+<span class="p">}</span></code></pre></figure><h3 id="file-modulestf"> <a href="#file-modulestf" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#link"></use></svg></a> File: <code class="highlighter-rouge">modules.tf</code></h3><p>Used this module so that I can easily set the content type of the files. The files to be deployed are found in the folder <code class="highlighter-rouge">../web-app</code> with respect to this file.</p><figure class="highlight"><pre><code class="language-terraform" data-lang="terraform"><span class="k">module</span> <span class="s2">"template_files"</span> <span class="p">{</span>
+  <span class="nx">source</span>   <span class="p">=</span> <span class="s2">"hashicorp/dir/template"</span>
+  <span class="nx">base_dir</span> <span class="p">=</span> <span class="s2">"</span><span class="k">${</span><span class="nx">path</span><span class="p">.</span><span class="k">module}</span><span class="s2">/../web-app"</span>
+<span class="p">}</span></code></pre></figure><h3 id="file-maintf"> <a href="#file-maintf" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#link"></use></svg></a> File: <code class="highlighter-rouge">main.tf</code></h3><figure class="highlight"><pre><code class="language-terraform" data-lang="terraform"><span class="nx">locals</span> <span class="p">{</span>
+  <span class="nx">s3_origin_id</span>   <span class="p">=</span> <span class="s2">"quickhacks_bucket"</span>
+  <span class="nx">s3_bucket_name</span> <span class="p">=</span> <span class="s2">"albertattard.quickhacks.cloud-front.bucket"</span>
+<span class="p">}</span>
+
+<span class="k">resource</span> <span class="s2">"aws_s3_bucket"</span> <span class="s2">"auickhacks_bucket"</span> <span class="p">{</span>
+  <span class="nx">bucket</span> <span class="p">=</span> <span class="kd">local</span><span class="p">.</span><span class="nx">s3_bucket_name</span>
+  <span class="nx">acl</span>    <span class="p">=</span> <span class="s2">"public-read"</span>
+
+  <span class="nx">server_side_encryption_configuration</span> <span class="p">{</span>
+    <span class="nx">rule</span> <span class="p">{</span>
+      <span class="nx">apply_server_side_encryption_by_default</span> <span class="p">{</span>
+        <span class="nx">sse_algorithm</span> <span class="p">=</span> <span class="s2">"AES256"</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="nx">cors_rule</span> <span class="p">{</span>
+    <span class="nx">allowed_origins</span> <span class="p">=</span> <span class="p">[</span><span class="s2">"*"</span><span class="p">]</span>
+    <span class="nx">allowed_methods</span> <span class="p">=</span> <span class="p">[</span><span class="s2">"GET"</span><span class="p">,</span> <span class="s2">"HEAD"</span><span class="p">]</span>
+    <span class="nx">allowed_headers</span> <span class="p">=</span> <span class="p">[</span><span class="s2">"*"</span><span class="p">]</span>
+  <span class="p">}</span>
+
+  <span class="nx">website</span> <span class="p">{</span>
+    <span class="nx">index_document</span> <span class="p">=</span> <span class="s2">"index.html"</span>
+    <span class="nx">error_document</span> <span class="p">=</span> <span class="s2">"error.html"</span>
+  <span class="p">}</span>
+
+  <span class="nx">policy</span> <span class="p">=</span> <span class="o">&lt;&lt;</span><span class="no">EOF</span><span class="sh">
+{
+  "Version": "2008-10-17",
+  "Statement": [
+    {
+      "Sid": "PublicReadForGetBucketObjects",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "*"
+      },
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::${local.s3_bucket_name}/*"
+    }
+  ]
+}
+</span><span class="no">EOF
+
+</span>  <span class="nx">tags</span> <span class="p">=</span> <span class="p">{</span>
+    <span class="nx">Name</span>      <span class="p">=</span> <span class="s2">"Quickhacks - Bucket"</span>
+    <span class="nx">Quickhack</span> <span class="p">=</span> <span class="s2">"S3 and Cloud Front"</span>
+    <span class="nx">ManagedBy</span> <span class="p">=</span> <span class="s2">"Terraform"</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">resource</span> <span class="s2">"aws_s3_bucket_object"</span> <span class="s2">"auickhacks_bucket_object"</span> <span class="p">{</span>
+  <span class="nx">for_each</span>     <span class="p">=</span> <span class="k">module</span><span class="p">.</span><span class="nx">template_files</span><span class="p">.</span><span class="nx">files</span>
+  <span class="nx">bucket</span>       <span class="p">=</span> <span class="nx">aws_s3_bucket</span><span class="p">.</span><span class="nx">auickhacks_bucket</span><span class="p">.</span><span class="nx">id</span>
+  <span class="nx">key</span>          <span class="p">=</span> <span class="nx">each</span><span class="p">.</span><span class="nx">key</span>
+  <span class="nx">content_type</span> <span class="p">=</span> <span class="nx">each</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">content_type</span>
+  <span class="nx">source</span>       <span class="p">=</span> <span class="nx">each</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">source_path</span>
+  <span class="nx">content</span>      <span class="p">=</span> <span class="nx">each</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">content</span>
+  <span class="nx">etag</span>         <span class="p">=</span> <span class="nx">each</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">digests</span><span class="p">.</span><span class="nx">md5</span>
+
+  <span class="nx">tags</span> <span class="p">=</span> <span class="p">{</span>
+    <span class="nx">Name</span>      <span class="p">=</span> <span class="s2">"Quickhacks - Bucket Object </span><span class="k">${</span><span class="nx">each</span><span class="p">.</span><span class="nx">value</span><span class="p">.</span><span class="nx">source_path</span><span class="k">}</span><span class="s2">"</span>
+    <span class="nx">Quickhack</span> <span class="p">=</span> <span class="s2">"S3 and Cloud Front"</span>
+    <span class="nx">ManagedBy</span> <span class="p">=</span> <span class="s2">"Terraform"</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">resource</span> <span class="s2">"aws_cloudfront_distribution"</span> <span class="s2">"auickhacks_s3_distribution"</span> <span class="p">{</span>
+  <span class="nx">origin</span> <span class="p">{</span>
+    <span class="nx">domain_name</span> <span class="p">=</span> <span class="nx">aws_s3_bucket</span><span class="p">.</span><span class="nx">auickhacks_bucket</span><span class="p">.</span><span class="nx">bucket_regional_domain_name</span>
+    <span class="nx">origin_id</span>   <span class="p">=</span> <span class="kd">local</span><span class="p">.</span><span class="nx">s3_origin_id</span>
+  <span class="p">}</span>
+
+  <span class="nx">enabled</span>             <span class="p">=</span> <span class="kc">true</span>
+  <span class="nx">default_root_object</span> <span class="p">=</span> <span class="s2">"index.html"</span>
+
+  <span class="nx">default_cache_behavior</span> <span class="p">{</span>
+    <span class="nx">allowed_methods</span>  <span class="p">=</span> <span class="p">[</span><span class="s2">"GET"</span><span class="p">,</span> <span class="s2">"HEAD"</span><span class="p">]</span>
+    <span class="nx">cached_methods</span>   <span class="p">=</span> <span class="p">[</span><span class="s2">"GET"</span><span class="p">,</span> <span class="s2">"HEAD"</span><span class="p">]</span>
+    <span class="nx">target_origin_id</span> <span class="p">=</span> <span class="kd">local</span><span class="p">.</span><span class="nx">s3_origin_id</span>
+
+    <span class="nx">forwarded_values</span> <span class="p">{</span>
+      <span class="nx">query_string</span> <span class="p">=</span> <span class="kc">false</span>
+
+      <span class="nx">cookies</span> <span class="p">{</span>
+        <span class="nx">forward</span> <span class="p">=</span> <span class="s2">"none"</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="nx">viewer_protocol_policy</span> <span class="p">=</span> <span class="s2">"allow-all"</span>
+    <span class="nx">min_ttl</span>                <span class="p">=</span> <span class="mi">0</span>
+    <span class="nx">default_ttl</span>            <span class="p">=</span> <span class="mi">3600</span>
+    <span class="nx">max_ttl</span>                <span class="p">=</span> <span class="mi">86400</span>
+  <span class="p">}</span>
+
+  <span class="nx">restrictions</span> <span class="p">{</span>
+    <span class="nx">geo_restriction</span> <span class="p">{</span>
+      <span class="nx">restriction_type</span> <span class="p">=</span> <span class="s2">"none"</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="nx">viewer_certificate</span> <span class="p">{</span>
+    <span class="nx">cloudfront_default_certificate</span> <span class="p">=</span> <span class="kc">true</span>
+  <span class="p">}</span>
+
+  <span class="nx">tags</span> <span class="p">=</span> <span class="p">{</span>
+    <span class="nx">Name</span>      <span class="p">=</span> <span class="s2">"Quickhacks - S3 Distribution"</span>
+    <span class="nx">Quickhack</span> <span class="p">=</span> <span class="s2">"S3 and Cloud Front"</span>
+    <span class="nx">ManagedBy</span> <span class="p">=</span> <span class="s2">"Terraform"</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure><h3 id="file-outputtf"> <a href="#file-outputtf" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#link"></use></svg></a> File: <code class="highlighter-rouge">output.tf</code></h3><figure class="highlight"><pre><code class="language-terraform" data-lang="terraform"><span class="k">output</span> <span class="s2">"domain_name"</span> <span class="p">{</span>
+  <span class="nx">description</span> <span class="p">=</span> <span class="s2">"Domain name corresponding to the distribution"</span>
+  <span class="nx">value</span>       <span class="p">=</span> <span class="nx">try</span><span class="p">(</span><span class="nx">aws_cloudfront_distribution</span><span class="p">.</span><span class="nx">auickhacks_s3_distribution</span><span class="p">.</span><span class="nx">domain_name</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
+<span class="p">}</span></code></pre></figure><h2 id="access-the-default-root-object"> <a href="#access-the-default-root-object" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#link"></use></svg></a> Access the default root object</h2><p>Access the default root object, which is set to be the <code class="highlighter-rouge">index.html</code> page.</p><div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>curl <span class="nt">-v</span> <span class="s2">"https://</span><span class="si">$(</span><span class="nv">AWS_PROFILE</span><span class="o">=</span><span class="s2">"quickhacks"</span> terraform <span class="nt">-chdir</span><span class="o">=</span>terraform output <span class="nt">-json</span> domain_name | jq <span class="nt">-r</span> <span class="s2">"."</span><span class="si">)</span><span class="s2">"</span>
+</code></pre></div></div><h2 id="versions"> <a href="#versions" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#link"></use></svg></a> Versions</h2><ol><li><p>Terraform</p><div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp"> $</span><span class="w"> </span>terraform <span class="nt">--version</span>
+<span class="go"> Terraform v0.15.0
+</span></code></pre></div></div><li><p>cURL</p><div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>curl <span class="nt">--version</span>
+<span class="go">curl 7.64.1 (x86_64-apple-darwin20.0) libcurl/7.64.1 (SecureTransport) LibreSSL/2.8.3 zlib/1.2.11 nghttp2/1.41.0
+Release-Date: 2019-03-27
+Protocols: dict file ftp ftps gopher http https imap imaps ldap ldaps pop3 pop3s rtsp smb smbs smtp smtps telnet tftp
+Features: AsynchDNS GSS-API HTTP2 HTTPS-proxy IPv6 Kerberos Largefile libz MultiSSL NTLM NTLM_WB SPNEGO SSL UnixSockets
+</span></code></pre></div></div><li><p>jq</p><div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>jq <span class="nt">--version</span>
+<span class="go">jq-1.6
+</span></code></pre></div></div></ol><hr><footer role="contentinfo"><p class="text-small text-grey-dk-000 mb-0">Copyright &copy; Albert Attard. Distributed by an <a href="https://opensource.org/licenses/Apache-2.0">Apache License 2.0.</a></p></footer></div></div></div></div>
