@@ -43,28 +43,28 @@
     "relUrl": "/docs/vue/if-else-ladder/"
   }
   ,"8": {
-    "title": "CLI",
-    "content": "CLI . A set of AWS CLI quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/aws/cli/",
-    "relUrl": "/docs/aws/cli/"
-  }
-  ,"9": {
     "title": "Java",
     "content": "Java . A set of Java quickhacks. .",
     "url": "https://albertattard.github.io/quickhacks/docs/java/",
     "relUrl": "/docs/java/"
   }
-  ,"10": {
-    "title": "Terraform",
-    "content": "Terraform . A set of AWS and Terraform quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/aws/terraform/",
-    "relUrl": "/docs/aws/terraform/"
-  }
-  ,"11": {
+  ,"9": {
     "title": "Gradle",
     "content": "Gradle . A set of Gradle and Gradle Wrapper quickhacks. .",
     "url": "https://albertattard.github.io/quickhacks/docs/gradle/",
     "relUrl": "/docs/gradle/"
+  }
+  ,"10": {
+    "title": "CLI",
+    "content": "CLI . A set of AWS CLI quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/aws/cli/",
+    "relUrl": "/docs/aws/cli/"
+  }
+  ,"11": {
+    "title": "Docker",
+    "content": "Docker . A set of docker and docker-compose quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/docker/",
+    "relUrl": "/docs/docker/"
   }
   ,"12": {
     "title": "Vue",
@@ -79,10 +79,10 @@
     "relUrl": "/docs/aws/"
   }
   ,"14": {
-    "title": "Docker",
-    "content": "Docker . A set of docker and docker-compose quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/docker/",
-    "relUrl": "/docs/docker/"
+    "title": "Terraform",
+    "content": "Terraform . A set of AWS and Terraform quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/aws/terraform/",
+    "relUrl": "/docs/aws/terraform/"
   }
   ,"15": {
     "title": "Home",
