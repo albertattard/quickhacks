@@ -8,24 +8,28 @@
   <span class="nt">&lt;body&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"app"</span><span class="nt">&gt;</span>
       <span class="nt">&lt;h1&gt;</span>Exam Grade<span class="nt">&lt;/h1&gt;</span>
+      <span class="nt">&lt;p&gt;</span>Exam Mark: {{examMark}}<span class="nt">&lt;/p&gt;</span>
 
-      <span class="c">&lt;!-- if-else Ladder --&gt;</span>
-      <span class="nt">&lt;p</span> <span class="na">v-if=</span><span class="s">"examMark &gt;= 90"</span><span class="nt">&gt;</span>A<span class="nt">&lt;/p&gt;</span>
-      <span class="nt">&lt;p</span> <span class="na">v-else-if=</span><span class="s">"examMark &gt;= 75"</span><span class="nt">&gt;</span>B<span class="nt">&lt;/p&gt;</span>
-      <span class="nt">&lt;p</span> <span class="na">v-else-if=</span><span class="s">"examMark &gt;= 50"</span><span class="nt">&gt;</span>C<span class="nt">&lt;/p&gt;</span>
-      <span class="nt">&lt;p</span> <span class="na">v-else-if=</span><span class="s">"examMark &gt;= 35"</span><span class="nt">&gt;</span>D<span class="nt">&lt;/p&gt;</span>
-      <span class="nt">&lt;p</span> <span class="na">v-else</span><span class="nt">&gt;</span>Failed<span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;p&gt;</span>
+        <span class="nt">&lt;span&gt;</span>Grade: <span class="nt">&lt;/span&gt;</span>
+
+        <span class="c">&lt;!-- if-else Ladder --&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">v-if=</span><span class="s">"examMark &gt;= 90"</span><span class="nt">&gt;</span>A<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">v-else-if=</span><span class="s">"examMark &gt;= 75"</span><span class="nt">&gt;</span>B<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">v-else-if=</span><span class="s">"examMark &gt;= 50"</span><span class="nt">&gt;</span>C<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">v-else-if=</span><span class="s">"examMark &gt;= 35"</span><span class="nt">&gt;</span>D<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">v-else</span><span class="nt">&gt;</span>Failed<span class="nt">&lt;/span&gt;</span>
+      <span class="nt">&lt;/p&gt;</span>
 
     <span class="nt">&lt;/div&gt;</span>
 
     <span class="c">&lt;!-- Import and mount the App --&gt;</span>
     <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"./main.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-    <span class="nt">&lt;script&gt;</span><span class="kd">const</span> <span class="nx">mountedApp</span> <span class="o">=</span> <span class="nx">app</span><span class="p">.</span><span class="nx">mount</span><span class="p">(</span><span class="dl">'</span><span class="s1">#app</span><span class="dl">'</span><span class="p">)</span><span class="nt">&lt;/script&gt;</span>
   <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span></code></pre></figure><h2 id="file-mainjs"> <a href="#file-mainjs" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#link"></use></svg></a> File: <code class="highlighter-rouge">main.js</code></h2><figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">Vue</span><span class="p">.</span><span class="nx">createApp</span><span class="p">({</span>
+<span class="nt">&lt;/html&gt;</span></code></pre></figure><h2 id="file-mainjs"> <a href="#file-mainjs" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#link"></use></svg></a> File: <code class="highlighter-rouge">main.js</code></h2><figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">Vue</span><span class="p">.</span><span class="nx">createApp</span><span class="p">({</span>
     <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">return</span> <span class="p">{</span>
             <span class="na">examMark</span><span class="p">:</span> <span class="mi">80</span>
         <span class="p">}</span>
     <span class="p">}</span>
-<span class="p">})</span></code></pre></figure><hr><footer role="contentinfo"><p class="text-small text-grey-dk-000 mb-0">Copyright &copy; Albert Attard. Distributed by an <a href="https://opensource.org/licenses/Apache-2.0">Apache License 2.0.</a></p></footer></div></div></div></div>
+<span class="p">}).</span><span class="nx">mount</span><span class="p">(</span><span class="dl">'</span><span class="s1">#app</span><span class="dl">'</span><span class="p">)</span></code></pre></figure><hr><footer role="contentinfo"><p class="text-small text-grey-dk-000 mb-0">Copyright &copy; Albert Attard. Distributed by an <a href="https://opensource.org/licenses/Apache-2.0">Apache License 2.0.</a></p></footer></div></div></div></div>
