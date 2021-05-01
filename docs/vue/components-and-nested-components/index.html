@@ -7,7 +7,10 @@
   <span class="nt">&lt;/head&gt;</span>
   <span class="nt">&lt;body&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"app"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;outer-component</span> <span class="na">:speciality=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/outer-component&gt;</span>
+      <span class="c">&lt;!-- Include the components --&gt;</span>
+      <span class="c">&lt;!-- Bind the arguments using v-bind --&gt;</span>
+      <span class="nt">&lt;outer-component</span> <span class="na">v-bind:speciality=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/outer-component&gt;</span>
+      <span class="c">&lt;!-- Bind the arguments using the shorthand (without 'v-bind') --&gt;</span>
       <span class="nt">&lt;outer-component</span> <span class="na">:speciality=</span><span class="s">"false"</span><span class="nt">&gt;&lt;/outer-component&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 
@@ -32,7 +35,6 @@
         <span class="p">}</span>
     <span class="p">},</span>
     <span class="na">template</span><span class="p">:</span>
-    <span class="cm">/*html*/</span>
         <span class="s2">`
         &lt;h1&gt;Component&lt;/h1&gt;
         &lt;p&gt;{{ food }}&lt;span v-if="speciality"&gt; (Speciality)&lt;/span&gt;&lt;/p&gt;
@@ -52,7 +54,6 @@
         <span class="p">}</span>
     <span class="p">},</span>
     <span class="na">template</span><span class="p">:</span>
-    <span class="cm">/*html*/</span>
         <span class="s2">`
         &lt;h2&gt;Nested Component&lt;/h2&gt;
         &lt;ul&gt;
