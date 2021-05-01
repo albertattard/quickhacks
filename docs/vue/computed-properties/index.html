@@ -10,7 +10,8 @@
       <span class="nt">&lt;h1&gt;</span>Hello<span class="nt">&lt;/h1&gt;</span>
 
       <span class="c">&lt;!-- Computed Properties --&gt;</span>
-      <span class="nt">&lt;p&gt;</span>{{ name + ' ' + surname }}<span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;p&gt;</span>{{ name + ' ' + surname }} (not computed)<span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;p&gt;</span>{{ fullName }} (computed)<span class="nt">&lt;/p&gt;</span>
 
     <span class="nt">&lt;/div&gt;</span>
 
@@ -23,6 +24,11 @@
         <span class="k">return</span> <span class="p">{</span>
             <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Albert</span><span class="dl">'</span><span class="p">,</span>
             <span class="na">surname</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Attard</span><span class="dl">'</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="na">computed</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nx">fullName</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">surname</span><span class="p">;</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">})</span></code></pre></figure><hr><footer role="contentinfo"><p class="text-small text-grey-dk-000 mb-0">Copyright &copy; Albert Attard. Distributed by an <a href="https://opensource.org/licenses/Apache-2.0">Apache License 2.0.</a></p></footer></div></div></div></div>

@@ -10,9 +10,16 @@
       <span class="nt">&lt;h1&gt;</span>Ingredients<span class="nt">&lt;/h1&gt;</span>
 
       <span class="c">&lt;!-- for Loop --&gt;</span>
+      <span class="c">&lt;!-- without index --&gt;</span>
       <span class="nt">&lt;ul&gt;</span>
         <span class="nt">&lt;li</span> <span class="na">v-for=</span><span class="s">"ingredient in ingredients"</span> <span class="na">:key=</span><span class="s">"ingredient.id"</span><span class="nt">&gt;</span>{{ ingredient.name }}<span class="nt">&lt;/li&gt;</span>
       <span class="nt">&lt;/ul&gt;</span>
+
+      <span class="c">&lt;!-- with index --&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">v-for=</span><span class="s">"(ingredient, index) in ingredients"</span> <span class="na">:key=</span><span class="s">"ingredient.id"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span&gt;</span>Index [{{ index }}] - <span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;span&gt;</span>{{ ingredient.name }}<span class="nt">&lt;/span&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
 
     <span class="nt">&lt;/div&gt;</span>
 
