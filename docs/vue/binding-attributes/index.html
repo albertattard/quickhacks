@@ -9,7 +9,8 @@
     <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"app"</span><span class="nt">&gt;</span>
       <span class="nt">&lt;h1&gt;</span>Profile<span class="nt">&lt;/h1&gt;</span>
       <span class="c">&lt;!-- Interpolation --&gt;</span>
-      <span class="nt">&lt;p&gt;</span>Name: <span class="nt">&lt;span&gt;</span>{{ fullName }}<span class="nt">&lt;/span&gt;&lt;/p&gt;</span>
+      <span class="nt">&lt;p&gt;</span>{{ fullName() }} (calls one of the methods)<span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;p&gt;</span>{{ fullNameLastNameUpperCase() }} (calls the other methods)<span class="nt">&lt;/p&gt;</span>
 
       <span class="c">&lt;!-- Binding attributes --&gt;</span>
       <span class="c">&lt;!-- using the v-bind --&gt;</span>
@@ -26,9 +27,21 @@
 <span class="nt">&lt;/html&gt;</span></code></pre></figure><h2 id="file-mainjs"> <a href="#file-mainjs" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#link"></use></svg></a> File: <code class="highlighter-rouge">main.js</code></h2><figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">Vue</span><span class="p">.</span><span class="nx">createApp</span><span class="p">({</span>
     <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">return</span> <span class="p">{</span>
-            <span class="na">fullName</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Albert Attard</span><span class="dl">"</span><span class="p">,</span>
+            <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Albert</span><span class="dl">"</span><span class="p">,</span>
+            <span class="na">surname</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Attard</span><span class="dl">"</span><span class="p">,</span>
             <span class="na">linkedInLink</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://www.linkedin.com/in/albertattard/</span><span class="dl">"</span><span class="p">,</span>
             <span class="na">gitHubLink</span><span class="p">:</span> <span class="dl">"</span><span class="s2">https://github.com/albertattard/</span><span class="dl">"</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
+        <span class="cm">/* Using older syntax */</span>
+        <span class="na">fullName</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">surname</span>
+        <span class="p">},</span>
+
+        <span class="cm">/* Taking advantage from ES6 syntax */</span>
+        <span class="nx">fullNameLastNameUpperCase</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">surname</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">()</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">})</span></code></pre></figure><hr><footer role="contentinfo"><p class="text-small text-grey-dk-000 mb-0">Copyright &copy; Albert Attard. Distributed by an <a href="https://opensource.org/licenses/Apache-2.0">Apache License 2.0.</a></p></footer></div></div></div></div>
