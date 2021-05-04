@@ -46,7 +46,7 @@
 <loc>https://albertattard.github.io/quickhacks/docs/vue/forms-and-v-model/</loc>
 </url>
 <url>
-<loc>https://albertattard.github.io/quickhacks/docs/cradle/gradlew/</loc>
+<loc>https://albertattard.github.io/quickhacks/docs/gradle/gradlew/</loc>
 </url>
 <url>
 <loc>https://albertattard.github.io/quickhacks/docs/vue/html/</loc>
@@ -128,6 +128,9 @@
 </url>
 <url>
 <loc>https://albertattard.github.io/quickhacks/docs/vue/show/</loc>
+</url>
+<url>
+<loc>https://albertattard.github.io/quickhacks/docs/gradle/task-dependencies/</loc>
 </url>
 <url>
 <loc>https://albertattard.github.io/quickhacks/docs/azure/terraform/vm-publicly-accessible/</loc>

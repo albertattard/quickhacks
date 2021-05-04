@@ -87,8 +87,8 @@
   ,"15": {
     "title": "Gradle Wrapper",
     "content": "Gradle Wrapper . Blank Projects . A blank project containing just the gradle wrapper. . SSH . $ git clone git@github.com:albertattard/blank-gradle-project.git . | HTTPS . $ git clone https://github.com/albertattard/blank-gradle-project.git . | . Version . $ ./gradlew --version . Set Version . You can update, or downgrade, Gradle Wrapper version used . $ ./gradlew wrapper --gradle-version 7.0 . It is recommended to set the SHA256 signature if the Gradle Wrapper to mitigate against man in the middle attacks, and verify that the correct version of Gradle Wrapper is used. . $ ./gradlew wrapper --gradle-distribution-sha256-sum=eb8b89184261025b0430f5b2233701ff1377f96da1ef5e278af6ae8bac5cc305 . A full list of SHA256 signatures is found here. . Kindly note that the checksum verification is only performed when the Gradle Wrapper distribution hasn’t been downloaded yet. The Gradle Wrapper distribution is not verified if this was already downloaded. The wrapper can be deleted as shown next. . $ rm -rf ~/.gradle/wrapper/dists/gradle-7.0-bin . It is also good to verify the Gradle Wrapper JAR file as this is an important part of the build. GitHub provides an action for that already. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/cradle/gradlew/",
-    "relUrl": "/docs/cradle/gradlew/"
+    "url": "https://albertattard.github.io/quickhacks/docs/gradle/gradlew/",
+    "relUrl": "/docs/gradle/gradlew/"
   }
   ,"16": {
     "title": "HTML (v-html)",
@@ -253,6 +253,12 @@
     "relUrl": "/docs/vue/show/"
   }
   ,"43": {
+    "title": "Task Dependencies",
+    "content": "Task Dependencies . References . https://plugins.gradle.org/plugin/org.barfuin.gradle.taskinfo | https://youtu.be/Vxfk7OsEekA?t=105 | . File: build.gradle . {% highlight gradle %} {% raw_include quickhacks/gradle/task-dependencies/build.gradle %} {% endhighlight %} . Display the Task Dependencies . $ ./gradlew tiTree build &gt; Task :tiTree :build (org.gradle.api.DefaultTask) + :assemble (org.gradle.api.DefaultTask) | ` :jar (org.gradle.api.tasks.bundling.Jar) | ` :classes (org.gradle.api.DefaultTask) | + :compileJava (org.gradle.api.tasks.compile.JavaCompile) | ` :processResources (org.gradle.language.jvm.tasks.ProcessResources) ` :check (org.gradle.api.DefaultTask) ` :test (org.gradle.api.tasks.testing.Test) + :classes (org.gradle.api.DefaultTask) | + :compileJava (org.gradle.api.tasks.compile.JavaCompile) | ` :processResources (org.gradle.language.jvm.tasks.ProcessResources) ` :testClasses (org.gradle.api.DefaultTask) + :compileTestJava (org.gradle.api.tasks.compile.JavaCompile) | ` :classes (org.gradle.api.DefaultTask) | + :compileJava (org.gradle.api.tasks.compile.JavaCompile) | ` :processResources (org.gradle.language.jvm.tasks.ProcessResources) ` :processTestResources (org.gradle.language.jvm.tasks.ProcessResources) BUILD SUCCESSFUL in 768ms 1 actionable task: 1 executed .",
+    "url": "https://albertattard.github.io/quickhacks/docs/gradle/task-dependencies/",
+    "relUrl": "/docs/gradle/task-dependencies/"
+  }
+  ,"44": {
     "title": "VM (Publicly Accessible)",
     "content": "Virtual Machine (Publicly Accessible) . {% include custom/pending.html details=”I am still working on this one” %} . . Terraform . File: terraform.tf . {% highlight terraform %} {% raw_include quickhacks/azure/terraform/vm-publicly-accessible/terraform.tf %} {% endhighlight %} . File: providers.tf . {% highlight terraform %} {% raw_include quickhacks/azure/terraform/vm-publicly-accessible/providers.tf %} {% endhighlight %} . File: main.tf . {% highlight terraform %} {% raw_include quickhacks/azure/terraform/vm-publicly-accessible/main.tf %} {% endhighlight %} . File: output.tf . {% highlight terraform %} {% raw_include quickhacks/azure/terraform/vm-publicly-accessible/output.tf %} {% endhighlight %} . SSH to VM . Connect to the VM instance using the private key . $ . Versions . Terraform . $ terraform --version Terraform v0.15.0 . | SSH . $ ssh -V OpenSSH_8.1p1, LibreSSL 2.7.3 . |",
     "url": "https://albertattard.github.io/quickhacks/docs/azure/terraform/vm-publicly-accessible/",
