@@ -17,6 +17,28 @@
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addName</span><span class="o">(</span><span class="nd">@RequestParam</span><span class="o">(</span><span class="s">"name"</span><span class="o">)</span> <span class="kd">final</span> <span class="nc">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
         <span class="no">LOGGER</span><span class="o">.</span><span class="na">debug</span><span class="o">(</span><span class="s">"Name: {}"</span><span class="o">,</span> <span class="n">name</span><span class="o">);</span>
     <span class="o">}</span>
+<span class="o">}</span></code></pre></figure><h2 id="file-buildgradle"> <a href="#file-buildgradle" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#link"></use></svg></a> File: <code class="highlighter-rouge">build.gradle</code></h2><figure class="highlight"><pre><code class="language-gradle" data-lang="gradle"><span class="n">plugins</span> <span class="o">{</span>
+    <span class="n">id</span> <span class="s1">'org.springframework.boot'</span> <span class="n">version</span> <span class="s1">'2.4.5'</span>
+    <span class="n">id</span> <span class="s1">'io.spring.dependency-management'</span> <span class="n">version</span> <span class="s1">'1.0.11.RELEASE'</span>
+    <span class="n">id</span> <span class="s1">'java'</span>
+<span class="o">}</span>
+
+<span class="n">java</span> <span class="o">{</span>
+    <span class="n">sourceCompatibility</span> <span class="o">=</span> <span class="n">JavaVersion</span><span class="o">.</span><span class="na">VERSION_16</span>
+    <span class="n">targetCompatibility</span> <span class="o">=</span> <span class="n">JavaVersion</span><span class="o">.</span><span class="na">VERSION_16</span>
+<span class="o">}</span>
+
+<span class="k">repositories</span> <span class="o">{</span>
+    <span class="n">mavenCentral</span><span class="o">()</span>
+<span class="o">}</span>
+
+<span class="k">dependencies</span> <span class="o">{</span>
+    <span class="n">implementation</span> <span class="s1">'org.springframework.boot:spring-boot-starter-web'</span>
+    <span class="n">testImplementation</span> <span class="s1">'org.springframework.boot:spring-boot-starter-test'</span>
+<span class="o">}</span>
+
+<span class="n">test</span> <span class="o">{</span>
+    <span class="n">useJUnitPlatform</span><span class="o">()</span>
 <span class="o">}</span></code></pre></figure><h2 id="versions"> <a href="#versions" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#link"></use></svg></a> Versions</h2><ul><li><p>Java</p><div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>java <span class="nt">-version</span>
 <span class="go">openjdk 16 2021-03-16
 OpenJDK Runtime Environment AdoptOpenJDK (build 16+36)
