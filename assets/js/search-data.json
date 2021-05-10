@@ -128,7 +128,7 @@
   }
   ,"22": {
     "title": "Ignore Uncommitted Changes to File",
-    "content": "Ignore Uncommitted Changes to File . Git Command . $ git checkout &lt;file-path&gt; . Versions . Git . $ git --version git version 2.30.1 (Apple Git-130) . |",
+    "content": "Ignore Uncommitted Changes to File . Git Commands . Save all changes (tracked or not) for later use and sets your working area to your last commit . $ git stash . | Replace a given file with the last committed copy . $ git checkout &lt;file-path&gt; . | Permanently discard all local changes and move back to the last commit . $ git reset --hard HEAD . Note that untracked files are not effected by this command, and you need to delete them manually . | . Versions . Git . $ git --version git version 2.30.1 (Apple Git-130) . |",
     "url": "https://albertattard.github.io/quickhacks/docs/git/ignore-uncommitted-changes-to-file/",
     "relUrl": "/docs/git/ignore-uncommitted-changes-to-file/"
   }
