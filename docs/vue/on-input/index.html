@@ -7,12 +7,19 @@
   <span class="nt">&lt;/head&gt;</span>
   <span class="nt">&lt;body&gt;</span>
     <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"app"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;h1&gt;</span>Name {{ name }}<span class="nt">&lt;/h1&gt;</span>
+      <span class="nt">&lt;h1&gt;</span>Name {{ fullName }}<span class="nt">&lt;/h1&gt;</span>
 
       <span class="c">&lt;!-- on input --&gt;</span>
-      <span class="c">&lt;!-- Uses the event created by the browser to get what the user typed --&gt;</span>
-      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">v-on:input=</span><span class="s">"setName"</span><span class="nt">/&gt;</span>
-
+      <span class="nt">&lt;div&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"name"</span><span class="nt">&gt;</span>Name: <span class="nt">&lt;/label&gt;</span>
+        <span class="c">&lt;!-- Uses the event created by the browser to get what the user typed --&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">v-on:input=</span><span class="s">"setName"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"surname"</span><span class="nt">&gt;</span>Surname: <span class="nt">&lt;/label&gt;</span>
+        <span class="c">&lt;!-- Passes the event created by the browser explicitly --&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"surname"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">v-on:input=</span><span class="s">"setSurname($event)"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
     <span class="nt">&lt;/div&gt;</span>
 
     <span class="c">&lt;!-- Import and mount the App --&gt;</span>
@@ -22,13 +29,22 @@
 <span class="nt">&lt;/html&gt;</span></code></pre></figure><h2 id="file-mainjs"> <a href="#file-mainjs" class="anchor-heading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#link"></use></svg></a> File: <code class="highlighter-rouge">main.js</code></h2><figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">Vue</span><span class="p">.</span><span class="nx">createApp</span><span class="p">({</span>
     <span class="nx">data</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">return</span> <span class="p">{</span>
-            <span class="na">name</span><span class="p">:</span> <span class="dl">''</span>
+            <span class="na">name</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+            <span class="na">surname</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
+            <span class="na">fullName</span><span class="p">:</span> <span class="dl">""</span><span class="p">,</span>
         <span class="p">}</span>
     <span class="p">},</span>
     <span class="na">methods</span><span class="p">:</span> <span class="p">{</span>
-        <span class="cm">/* Uses the event created by the browser to get what the user typed */</span>
         <span class="nx">setName</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span>
-        <span class="p">}</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">updateFullName</span><span class="p">();</span>
+        <span class="p">},</span>
+        <span class="nx">setSurname</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">surname</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">value</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">updateFullName</span><span class="p">();</span>
+        <span class="p">},</span>
+        <span class="nx">updateFullName</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">fullName</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> </span><span class="dl">"</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">surname</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">()</span>
+        <span class="p">},</span>
     <span class="p">}</span>
 <span class="p">})</span></code></pre></figure><hr><footer role="contentinfo"><p class="text-small text-grey-dk-000 mb-0">Copyright &copy; Albert Attard. Distributed by an <a href="https://opensource.org/licenses/Apache-2.0">Apache License 2.0.</a></p></footer></div></div></div></div>
