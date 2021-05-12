@@ -31,16 +31,16 @@
     "relUrl": "/docs/git/change-last-commit-message/"
   }
   ,"6": {
-    "title": "Terraform Commands",
-    "content": "Terraform Commands . Initialise terraform . $ AWS_PROFILE=&quot;quickhacks&quot; terraform init . Or, use the -chdir argument to run the command from a different directory . $ AWS_PROFILE=&quot;quickhacks&quot; terraform -chdir=terraform init . | Format code (recursive) . $ terraform fmt -recursive . Or, use the -chdir argument to run the command from a different directory . $ terraform -chdir=terraform fmt -recursive . | Plan the changes . Without saving the plan. . $ AWS_PROFILE=&quot;quickhacks&quot; terraform plan . Saving the plan so that it can be executed later on. . $ AWS_PROFILE=&quot;quickhacks&quot; terraform plan -out quickhacks.plan . | Apply the changes . $ AWS_PROFILE=&quot;quickhacks&quot; terraform apply . Or, use the -chdir argument to run the command from a different directory . $ AWS_PROFILE=&quot;quickhacks&quot; terraform -chdir=terraform apply . | Output values . $ AWS_PROFILE=&quot;quickhacks&quot; terraform output . Or, use the -chdir argument to run the command from a different directory . $ AWS_PROFILE=&quot;quickhacks&quot; terraform -chdir=terraform output . Change the format to JSON . $ AWS_PROFILE=&quot;quickhacks&quot; terraform output -json . | Destroy the resources . $ AWS_PROFILE=&quot;quickhacks&quot; terraform destroy . Or, use the -chdir argument to run the command from a different directory . $ AWS_PROFILE=&quot;quickhacks&quot; terraform -chdir=terraform destroy . | Versions . Terraform . $ terraform --version Terraform v0.15.0 . |",
-    "url": "https://albertattard.github.io/quickhacks/docs/aws/terraform/commands/",
-    "relUrl": "/docs/aws/terraform/commands/"
-  }
-  ,"7": {
     "title": "CLI Commands",
     "content": "Azure CLI Commands . References . https://docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli | . Commands . Version . $ az --version azure-cli 2.22.1 core 2.22.1 telemetry 1.0.6 Python location &#39;/usr/local/Cellar/azure-cli/2.22.1/libexec/bin/python&#39; Extensions directory &#39;/Users/albertattard/.azure/cliextensions&#39; Python (Darwin) 3.8.9 (default, Apr 3 2021, 01:51:00) [Clang 12.0.0 (clang-1200.0.32.29)] Legal docs and information: aka.ms/AzureCliLegal Your CLI is up-to-date. Please let us know how we are doing: https://aka.ms/azureclihats and let us know if you&#39;re interested in trying out our newest features: https://aka.ms/CLIUXstudy . | Login . $ az login . | Versions . azure CLI . $ az --version azure-cli 2.22.1 core 2.22.1 telemetry 1.0.6 Python location &#39;/usr/local/Cellar/azure-cli/2.22.1/libexec/bin/python&#39; Extensions directory &#39;/Users/albertattard/.azure/cliextensions&#39; Python (Darwin) 3.8.9 (default, Apr 3 2021, 01:51:00) [Clang 12.0.0 (clang-1200.0.32.29)] Legal docs and information: aka.ms/AzureCliLegal Your CLI is up-to-date. Please let us know how we are doing: https://aka.ms/azureclihats and let us know if you&#39;re interested in trying out our newest features: https://aka.ms/CLIUXstudy . |",
     "url": "https://albertattard.github.io/quickhacks/docs/azure/cli/commands/",
     "relUrl": "/docs/azure/cli/commands/"
+  }
+  ,"7": {
+    "title": "Terraform Commands",
+    "content": "Terraform Commands . Initialise terraform . $ AWS_PROFILE=&quot;quickhacks&quot; terraform init . Or, use the -chdir argument to run the command from a different directory . $ AWS_PROFILE=&quot;quickhacks&quot; terraform -chdir=terraform init . | Format code (recursive) . $ terraform fmt -recursive . Or, use the -chdir argument to run the command from a different directory . $ terraform -chdir=terraform fmt -recursive . | Plan the changes . Without saving the plan. . $ AWS_PROFILE=&quot;quickhacks&quot; terraform plan . Saving the plan so that it can be executed later on. . $ AWS_PROFILE=&quot;quickhacks&quot; terraform plan -out quickhacks.plan . | Apply the changes . $ AWS_PROFILE=&quot;quickhacks&quot; terraform apply . Or, use the -chdir argument to run the command from a different directory . $ AWS_PROFILE=&quot;quickhacks&quot; terraform -chdir=terraform apply . | Output values . $ AWS_PROFILE=&quot;quickhacks&quot; terraform output . Or, use the -chdir argument to run the command from a different directory . $ AWS_PROFILE=&quot;quickhacks&quot; terraform -chdir=terraform output . Change the format to JSON . $ AWS_PROFILE=&quot;quickhacks&quot; terraform output -json . | Destroy the resources . $ AWS_PROFILE=&quot;quickhacks&quot; terraform destroy . Or, use the -chdir argument to run the command from a different directory . $ AWS_PROFILE=&quot;quickhacks&quot; terraform -chdir=terraform destroy . | Versions . Terraform . $ terraform --version Terraform v0.15.0 . |",
+    "url": "https://albertattard.github.io/quickhacks/docs/aws/terraform/commands/",
+    "relUrl": "/docs/aws/terraform/commands/"
   }
   ,"8": {
     "title": "Components and Nested Components",
@@ -133,16 +133,16 @@
     "relUrl": "/docs/git/ignore-uncommitted-changes-to-file/"
   }
   ,"23": {
-    "title": "CLI (Azure)",
-    "content": "CLI . A set of Azure CLI quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/azure/cli/",
-    "relUrl": "/docs/azure/cli/"
+    "title": "Terraform (Azure)",
+    "content": "Terraform . A set of Azure and Terraform quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/azure/terraform/",
+    "relUrl": "/docs/azure/terraform/"
   }
   ,"24": {
-    "title": "Java 11",
-    "content": "Java 11 . A set of Java 11 quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/java/java-11/",
-    "relUrl": "/docs/java/java-11/"
+    "title": "Home",
+    "content": "Quickhacks . Many times I had to look for an old example where I did something similar, like create an S3 bucket using Terraform. I have decided to compile a list of code fragments and short examples and called this compilation quickhacks. I got the name from the Cyberpunk 2077 game. As a netrunner you can use quickhacks to defeat your challenges and proceed. I love that game despite its many flaws. . The quickhacks are not meant to be a tutorial nor to provide detailed descriptions. Instead, these are meant to be a quick reference of code fragments. .",
+    "url": "https://albertattard.github.io/quickhacks/",
+    "relUrl": "/"
   }
   ,"25": {
     "title": "Web",
@@ -151,10 +151,10 @@
     "relUrl": "/docs/spring/web/"
   }
   ,"26": {
-    "title": "Testing (Vue)",
-    "content": "Testing (Vue) .",
-    "url": "https://albertattard.github.io/quickhacks/docs/vue/testing/",
-    "relUrl": "/docs/vue/testing/"
+    "title": "Java",
+    "content": "Java . A set of Java quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/java/",
+    "relUrl": "/docs/java/"
   }
   ,"27": {
     "title": "Spring",
@@ -163,40 +163,40 @@
     "relUrl": "/docs/spring/"
   }
   ,"28": {
-    "title": "Terraform (AWS)",
-    "content": "Terraform . A set of AWS and Terraform quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/aws/terraform/",
-    "relUrl": "/docs/aws/terraform/"
-  }
-  ,"29": {
     "title": "Apache POI",
     "content": "Apache POI . A set of Apache POI, the Java API for Microsoft Documents quickhacks. .",
     "url": "https://albertattard.github.io/quickhacks/docs/java/apache-poi/",
     "relUrl": "/docs/java/apache-poi/"
   }
-  ,"30": {
-    "title": "Docker",
-    "content": "Docker . A set of docker and docker-compose quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/docker/",
-    "relUrl": "/docs/docker/"
-  }
-  ,"31": {
+  ,"29": {
     "title": "CLI (AWS)",
     "content": "CLI . A set of AWS CLI quickhacks. .",
     "url": "https://albertattard.github.io/quickhacks/docs/aws/cli/",
     "relUrl": "/docs/aws/cli/"
   }
+  ,"30": {
+    "title": "CLI (Azure)",
+    "content": "CLI . A set of Azure CLI quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/azure/cli/",
+    "relUrl": "/docs/azure/cli/"
+  }
+  ,"31": {
+    "title": "Testing (Vue)",
+    "content": "Testing (Vue) .",
+    "url": "https://albertattard.github.io/quickhacks/docs/vue/testing/",
+    "relUrl": "/docs/vue/testing/"
+  }
   ,"32": {
-    "title": "Terraform (Azure)",
-    "content": "Terraform . A set of Azure and Terraform quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/azure/terraform/",
-    "relUrl": "/docs/azure/terraform/"
+    "title": "Docker",
+    "content": "Docker . A set of docker and docker-compose quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/docker/",
+    "relUrl": "/docs/docker/"
   }
   ,"33": {
-    "title": "Azure",
-    "content": "Azure .",
-    "url": "https://albertattard.github.io/quickhacks/docs/azure/",
-    "relUrl": "/docs/azure/"
+    "title": "Terraform (AWS)",
+    "content": "Terraform . A set of AWS and Terraform quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/aws/terraform/",
+    "relUrl": "/docs/aws/terraform/"
   }
   ,"34": {
     "title": "Gradle",
@@ -205,34 +205,34 @@
     "relUrl": "/docs/gradle/"
   }
   ,"35": {
-    "title": "Java",
-    "content": "Java . A set of Java quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/java/",
-    "relUrl": "/docs/java/"
-  }
-  ,"36": {
     "title": "Vue",
     "content": "Vue . A set of Vue quickhacks. .",
     "url": "https://albertattard.github.io/quickhacks/docs/vue/",
     "relUrl": "/docs/vue/"
   }
-  ,"37": {
-    "title": "Git",
-    "content": "Git . A set of Git quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/git/",
-    "relUrl": "/docs/git/"
+  ,"36": {
+    "title": "Java 11",
+    "content": "Java 11 . A set of Java 11 quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/java/java-11/",
+    "relUrl": "/docs/java/java-11/"
   }
-  ,"38": {
+  ,"37": {
     "title": "AWS",
     "content": "AWS .",
     "url": "https://albertattard.github.io/quickhacks/docs/aws/",
     "relUrl": "/docs/aws/"
   }
+  ,"38": {
+    "title": "Git",
+    "content": "Git . A set of Git quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/git/",
+    "relUrl": "/docs/git/"
+  }
   ,"39": {
-    "title": "Home",
-    "content": "Quickhacks . Many times I had to look for an old example where I did something similar, like create an S3 bucket using Terraform. I have decided to compile a list of code fragments and short examples and called this compilation quickhacks. I got the name from the Cyberpunk 2077 game. As a netrunner you can use quickhacks to defeat your challenges and proceed. I love that game despite its many flaws. . The quickhacks are not meant to be a tutorial nor to provide detailed descriptions. Instead, these are meant to be a quick reference of code fragments. .",
-    "url": "https://albertattard.github.io/quickhacks/",
-    "relUrl": "/"
+    "title": "Azure",
+    "content": "Azure .",
+    "url": "https://albertattard.github.io/quickhacks/docs/azure/",
+    "relUrl": "/docs/azure/"
   }
   ,"40": {
     "title": "Install Azure CLI",
@@ -325,36 +325,42 @@
     "relUrl": "/docs/aws/terraform/redshift-cluster-publicly-accessible/"
   }
   ,"55": {
+    "title": "Rename the Current Branch",
+    "content": "Rename the Current Branch . Reference . https://git-scm.com/docs/git-branch#Documentation/git-branch.txt–m | https://git-scm.com/docs/git-checkout#Documentation/git-checkout.txt–bltnewbranchgt | . Git Command . Following are examples of how to rename a branch to &lt;new-branch-name&gt;. . Commits already exist . $ git branch -M &lt;new-branch-name&gt; . -M is a shortcut for -m -f (or the longer form --move --force). . Rename the branch to main . $ git branch -M main . | No commits exist . $ git checkout -b &lt;new-branch-name&gt; . Rename the branch to main . $ git checkout -b main Switched to a new branch &#39;main&#39; . | . In both cases, the previous branch is renamed to &lt;new-branch-name&gt;. . Versions . Git . $ git --version git version 2.30.1 (Apple Git-130) . |",
+    "url": "https://albertattard.github.io/quickhacks/docs/git/rename-the-current-branch/",
+    "relUrl": "/docs/git/rename-the-current-branch/"
+  }
+  ,"56": {
     "title": "S3 & Cloud Front",
     "content": "S3 &amp; Cloud Front . . Terraform . &#9432; NoteDeployment may take several minute to create all required AWS resources. Don&#39;t be alarmed if a simple deployment of few files take several minutes to complete. File: terraform.tf . The bucket quickhacks-terraform needs to be created beforehand. Refer to create S3 bucket for more information about that. . terraform { backend &quot;s3&quot; { bucket = &quot;quickhacks-terraform&quot; key = &quot;aws/s3-cloud-front/terraform.tfstate&quot; region = &quot;eu-central-1&quot; } } . File: providers.tf . provider &quot;aws&quot; { region = &quot;eu-central-1&quot; } . File: modules.tf . Used this module so that I can easily set the content type of the files. The files to be deployed are found in the folder ../web-app with respect to this file. . module &quot;template_files&quot; { source = &quot;hashicorp/dir/template&quot; base_dir = &quot;${path.module}/../web-app&quot; } . File: main.tf . locals { s3_origin_id = &quot;quickhacks_bucket&quot; s3_bucket_name = &quot;albertattard.quickhacks.cloud-front.bucket&quot; } resource &quot;aws_s3_bucket&quot; &quot;auickhacks_bucket&quot; { bucket = local.s3_bucket_name acl = &quot;public-read&quot; server_side_encryption_configuration { rule { apply_server_side_encryption_by_default { sse_algorithm = &quot;AES256&quot; } } } cors_rule { allowed_origins = [&quot;*&quot;] allowed_methods = [&quot;GET&quot;, &quot;HEAD&quot;] allowed_headers = [&quot;*&quot;] } website { index_document = &quot;index.html&quot; error_document = &quot;error.html&quot; } policy = &lt;&lt;EOF { &quot;Version&quot;: &quot;2008-10-17&quot;, &quot;Statement&quot;: [ { &quot;Sid&quot;: &quot;PublicReadForGetBucketObjects&quot;, &quot;Effect&quot;: &quot;Allow&quot;, &quot;Principal&quot;: { &quot;AWS&quot;: &quot;*&quot; }, &quot;Action&quot;: &quot;s3:GetObject&quot;, &quot;Resource&quot;: &quot;arn:aws:s3:::${local.s3_bucket_name}/*&quot; } ] } EOF tags = { Name = &quot;Quickhacks - Bucket&quot; Quickhack = &quot;S3 and Cloud Front&quot; ManagedBy = &quot;Terraform&quot; } } resource &quot;aws_s3_bucket_object&quot; &quot;auickhacks_bucket_object&quot; { for_each = module.template_files.files bucket = aws_s3_bucket.auickhacks_bucket.id key = each.key content_type = each.value.content_type source = each.value.source_path content = each.value.content etag = each.value.digests.md5 tags = { Name = &quot;Quickhacks - Bucket Object ${each.value.source_path}&quot; Quickhack = &quot;S3 and Cloud Front&quot; ManagedBy = &quot;Terraform&quot; } } resource &quot;aws_cloudfront_distribution&quot; &quot;auickhacks_s3_distribution&quot; { origin { domain_name = aws_s3_bucket.auickhacks_bucket.bucket_regional_domain_name origin_id = local.s3_origin_id } enabled = true default_root_object = &quot;index.html&quot; default_cache_behavior { allowed_methods = [&quot;GET&quot;, &quot;HEAD&quot;] cached_methods = [&quot;GET&quot;, &quot;HEAD&quot;] target_origin_id = local.s3_origin_id forwarded_values { query_string = false cookies { forward = &quot;none&quot; } } viewer_protocol_policy = &quot;allow-all&quot; min_ttl = 0 default_ttl = 3600 max_ttl = 86400 } restrictions { geo_restriction { restriction_type = &quot;none&quot; } } viewer_certificate { cloudfront_default_certificate = true } tags = { Name = &quot;Quickhacks - S3 Distribution&quot; Quickhack = &quot;S3 and Cloud Front&quot; ManagedBy = &quot;Terraform&quot; } } . File: output.tf . output &quot;domain_name&quot; { description = &quot;Domain name corresponding to the distribution&quot; value = try(aws_cloudfront_distribution.auickhacks_s3_distribution.domain_name, &quot;&quot;) } . Access the default root object . Access the default root object, which is set to be the index.html page. . $ curl -v &quot;https://$(AWS_PROFILE=&quot;quickhacks&quot; terraform -chdir=terraform output -json domain_name | jq -r &quot;.&quot;)&quot; . Versions . Terraform . $ terraform --version Terraform v0.15.0 . | cURL . $ curl --version curl 7.64.1 (x86_64-apple-darwin20.0) libcurl/7.64.1 (SecureTransport) LibreSSL/2.8.3 zlib/1.2.11 nghttp2/1.41.0 Release-Date: 2019-03-27 Protocols: dict file ftp ftps gopher http https imap imaps ldap ldaps pop3 pop3s rtsp smb smbs smtp smtps telnet tftp Features: AsynchDNS GSS-API HTTP2 HTTPS-proxy IPv6 Kerberos Largefile libz MultiSSL NTLM NTLM_WB SPNEGO SSL UnixSockets . | jq . $ jq --version jq-1.6 . |",
     "url": "https://albertattard.github.io/quickhacks/docs/aws/terraform/s3-cloud-front/",
     "relUrl": "/docs/aws/terraform/s3-cloud-front/"
   }
-  ,"56": {
+  ,"57": {
     "title": "S3",
     "content": "S3 . . Create Bucket . $ AWS_PROFILE=&quot;quickhacks&quot; aws s3 mb s3://quickhacks-terraform --region eu-central-1 make_bucket: quickhacks-terraform . Delete Bucket . Use the --force arguments if the bucket is not empty . $ AWS_PROFILE=&quot;quickhacks&quot; aws s3 rb s3://quickhacks-terraform --region eu-central-1 --force remove_bucket: quickhacks-terraform . Versions . AWS CLI . $ aws --version aws-cli/2.1.30 Python/3.9.2 Darwin/20.3.0 source/x86_64 prompt/off . |",
     "url": "https://albertattard.github.io/quickhacks/docs/aws/cli/s3/",
     "relUrl": "/docs/aws/cli/s3/"
   }
-  ,"57": {
+  ,"58": {
     "title": "Setup environment (SDKMAN)",
     "content": "Setup environment (SDKMAN) . SDKMAN is a command line tool that allows us to install different versions of Java, Gradle, Maven and more. SDKMAN also takes care of setting environment variables for you. Installing SDKMAN. . Install . $ curl -s &quot;https://get.sdkman.io&quot; | bash $ source &quot;~/.sdkman/bin/sdkman-init.sh&quot; . | Check version after installation . $ sdk version SDKMAN SDKMAN 5.11.0+644 . Update SDKMAN if an older version is found . $ sdk update . | List all available Java versions . $ sdk list java . This will print all versions available to SDKMAN from different vendors. . ================================================================================ Available Java Versions ================================================================================ Vendor | Use | Version | Dist | Status | Identifier -- AdoptOpenJDK | | 16.0.0.j9 | adpt | | 16.0.0.j9-adpt | | 16.0.0.hs | adpt | | 16.0.0.hs-adpt | | 15.0.2.hs | adpt | local only | 15.0.2.hs-adpt | | 11.0.11.j9 | adpt | | 11.0.11.j9-adpt | | 11.0.11.hs | adpt | | 11.0.11.hs-adpt | | 11.0.10.j9 | adpt | | 11.0.10.j9-adpt | &gt;&gt;&gt; | 11.0.10.hs | adpt | installed | 11.0.10.hs-adpt | | 8.0.292.j9 | adpt | | 8.0.292.j9-adpt | | 8.0.292.hs | adpt | | 8.0.292.hs-adpt | | 8.0.282.j9 | adpt | | 8.0.282.j9-adpt | | 8.0.282.hs | adpt | | 8.0.282.hs-adpt ... . The above shows two versions of Java installed . 15.0.2.hs-adpt | 11.0.10.hs-adpt | The version 11.0.10.hs-adpt is not available anymore as there is a newer version available, the version 11.0.11.hs-adpt. That’s why it has the status of local only. . The version 11.0.10.hs-adpt is the current default version of Java. . | Install the latest Java 11 and Java 16 . $ sdk install java 11.0.11.hs-adpt $ sdk install java 16.0.0.hs-adpt . OpenJDK comes in two flavours: . HotSpot (...x.hs-adpt) is the VM from the OpenJDK community. It is the most widely used VM today and is used in Oracle’s JDK (reference). | Eclipse OpenJ9 (...x.j9-adpt) is the VM from the Eclipse community. It is an enterprise-grade VM designed for low memory footprint and fast start-up and is used in IBM’s JDK (reference). | | Change the default Java . $ sdk default java 11.0.11.hs-adpt Default java version set 11.0.11.hs-adpt . Verify the version . $ java -version openjdk version &quot;11.0.10&quot; 2021-01-19 OpenJDK Runtime Environment AdoptOpenJDK (build 11.0.10+9) OpenJDK 64-Bit Server VM AdoptOpenJDK (build 11.0.10+9, mixed mode) . Optionally, add an alias to simplify switching from one version to another. . $ vi ~/.oh-my-zsh/custom/dev.zsh . Add the aliases . source &quot;$HOME/.sdkman/bin/sdkman-init.sh&quot; alias java11=&#39;sdk default java 11.0.10.hs-adpt&#39; alias java15=&#39;sdk default java 15.0.2.hs-adpt&#39; . Note that the aliases will need to be updated when different versions of Java are added or removed. I have Java 11 and Java 15 installed. . To switch between versions just use java11 and java15. . $ java11 Default java version set to 11.0.10.hs-adpt . | Set the JAVA_HOME environment variable . $ echo $JAVA_HOME /Users/albertattard/.sdkman/candidates/java/current . If the environment variable is missing, it will be blank. Edit the ~/.zshrc to set the JAVA_HOME environment variable. . $ vi ~/.zshrc . Add the JAVA_HOME environment variable . export JAVA_HOME=&quot;~/.sdkman/candidates/java/current&quot; . Open a new terminal and verify that this was properly set. . $ ${JAVA_HOME}/bin/java -version openjdk version &quot;11.0.10&quot; 2021-01-19 OpenJDK Runtime Environment AdoptOpenJDK (build 11.0.10+9) OpenJDK 64-Bit Server VM AdoptOpenJDK (build 11.0.10+9, mixed mode) . | For more details, please refer to: https://sdkman.io/install .",
     "url": "https://albertattard.github.io/quickhacks/docs/java/sdkman/",
     "relUrl": "/docs/java/sdkman/"
   }
-  ,"58": {
+  ,"59": {
     "title": "Show (v-show)",
     "content": "Show (v-show) . References . https://www.vuemastery.com/courses/intro-to-vue-3/conditional-rendering-vue3 | . File: index.html . {% highlight html %} {% raw_include quickhacks/vue/show/index.html %} {% endhighlight %} . File: main.js . {% highlight js %} {% raw_include quickhacks/vue/show/main.js %} {% endhighlight %} .",
     "url": "https://albertattard.github.io/quickhacks/docs/vue/show/",
     "relUrl": "/docs/vue/show/"
   }
-  ,"59": {
+  ,"60": {
     "title": "Task Dependencies",
     "content": "Task Dependencies . References . https://plugins.gradle.org/plugin/org.barfuin.gradle.taskinfo | https://youtu.be/Vxfk7OsEekA?t=105 | . File: build.gradle . {% highlight gradle %} {% raw_include quickhacks/gradle/task-dependencies/build.gradle %} {% endhighlight %} . Display the Task Dependencies . $ ./gradlew tiTree build &gt; Task :tiTree :build (org.gradle.api.DefaultTask) + :assemble (org.gradle.api.DefaultTask) | ` :jar (org.gradle.api.tasks.bundling.Jar) | ` :classes (org.gradle.api.DefaultTask) | + :compileJava (org.gradle.api.tasks.compile.JavaCompile) | ` :processResources (org.gradle.language.jvm.tasks.ProcessResources) ` :check (org.gradle.api.DefaultTask) ` :test (org.gradle.api.tasks.testing.Test) + :classes (org.gradle.api.DefaultTask) | + :compileJava (org.gradle.api.tasks.compile.JavaCompile) | ` :processResources (org.gradle.language.jvm.tasks.ProcessResources) ` :testClasses (org.gradle.api.DefaultTask) + :compileTestJava (org.gradle.api.tasks.compile.JavaCompile) | ` :classes (org.gradle.api.DefaultTask) | + :compileJava (org.gradle.api.tasks.compile.JavaCompile) | ` :processResources (org.gradle.language.jvm.tasks.ProcessResources) ` :processTestResources (org.gradle.language.jvm.tasks.ProcessResources) BUILD SUCCESSFUL in 768ms 1 actionable task: 1 executed . Versions . Gradle . $ ./gradlew --version Gradle 7.0 Build time: 2021-04-09 22:27:31 UTC Revision: d5661e3f0e07a8caff705f1badf79fb5df8022c4 Kotlin: 1.4.31 Groovy: 3.0.7 Ant: Apache Ant(TM) version 1.10.9 compiled on September 27 2020 JVM: 16 (AdoptOpenJDK 16+36) OS: Mac OS X 10.16 x86_64 . |",
     "url": "https://albertattard.github.io/quickhacks/docs/gradle/task-dependencies/",
     "relUrl": "/docs/gradle/task-dependencies/"
   }
-  ,"60": {
+  ,"61": {
     "title": "VM (Publicly Accessible)",
     "content": "Virtual Machine (Publicly Accessible) . {% include custom/pending.html details=”I am still working on this one” %} . . Terraform . File: terraform.tf . {% highlight terraform %} {% raw_include quickhacks/azure/terraform/vm-publicly-accessible/terraform.tf %} {% endhighlight %} . File: providers.tf . {% highlight terraform %} {% raw_include quickhacks/azure/terraform/vm-publicly-accessible/providers.tf %} {% endhighlight %} . File: main.tf . {% highlight terraform %} {% raw_include quickhacks/azure/terraform/vm-publicly-accessible/main.tf %} {% endhighlight %} . File: output.tf . {% highlight terraform %} {% raw_include quickhacks/azure/terraform/vm-publicly-accessible/output.tf %} {% endhighlight %} . SSH to VM . Connect to the VM instance using the private key . $ . Versions . Terraform . $ terraform --version Terraform v0.15.0 . | SSH . $ ssh -V OpenSSH_8.1p1, LibreSSL 2.7.3 . |",
     "url": "https://albertattard.github.io/quickhacks/docs/azure/terraform/vm-publicly-accessible/",
