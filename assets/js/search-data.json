@@ -241,10 +241,10 @@
     "relUrl": "/docs/azure/cli/install-azure-cli/"
   }
   ,"41": {
-    "title": "Java single file execution",
-    "content": "Java single file execution . Java 11 introduced Java Single File Execution (JEP-330) which enhanced the java launcher to run a program supplied as a single file of Java source code, including usage from within a script by means of “shebang” files and related techniques. . . File: hello . #!/usr/bin/java --source 11 public class HelloWorld { public static void main(final String[] args) { System.out.println(&quot;Hello World!!&quot;); } } . Run the script . $ ./hello Hello World!! . The script needs to be executable, otherwise you will get an error such as . zsh: permission denied: ./hello . Make the script executable . $ chmod +x hello . Versions . Java . $ java --version openjdk 11.0.10 2021-01-19 OpenJDK Runtime Environment AdoptOpenJDK (build 11.0.10+9) OpenJDK 64-Bit Server VM AdoptOpenJDK (build 11.0.10+9, mixed mode) . |",
-    "url": "https://albertattard.github.io/quickhacks/docs/java/java-11/java-single-file-execution/",
-    "relUrl": "/docs/java/java-11/java-single-file-execution/"
+    "title": "JEP 330: Launch Single-File Source-Code Programs",
+    "content": "JEP 330: Launch Single-File Source-Code Programs . Java 11 introduced Java Single File Execution (JEP-330) which enhanced the java launcher to run a program supplied as a single file of Java source code, including usage from within a script by means of “shebang” files and related techniques. . . File: hello . #!/usr/bin/java --source 11 public class HelloWorld { public static void main(final String[] args) { System.out.println(&quot;Hello World!!&quot;); } } . Run the script . $ ./hello Hello World!! . The script needs to be executable, otherwise you will get an error such as . zsh: permission denied: ./hello . Make the script executable . $ chmod +x hello . Versions . Java . $ java --version openjdk 11.0.10 2021-01-19 OpenJDK Runtime Environment AdoptOpenJDK (build 11.0.10+9) OpenJDK 64-Bit Server VM AdoptOpenJDK (build 11.0.10+9, mixed mode) . |",
+    "url": "https://albertattard.github.io/quickhacks/docs/java/java-11/jep-330-launch-single-file-source-code-programs/",
+    "relUrl": "/docs/java/java-11/jep-330-launch-single-file-source-code-programs/"
   }
   ,"42": {
     "title": "Jest Unit Testing",
