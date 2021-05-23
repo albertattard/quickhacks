@@ -37,16 +37,16 @@
     "relUrl": "/docs/git/change-last-commit-message/"
   }
   ,"7": {
-    "title": "Terraform Commands",
-    "content": "Terraform Commands . Initialise terraform . $ AWS_PROFILE=&quot;quickhacks&quot; terraform init . Or, use the -chdir argument to run the command from a different directory . $ AWS_PROFILE=&quot;quickhacks&quot; terraform -chdir=terraform init . | Format code (recursive) . $ terraform fmt -recursive . Or, use the -chdir argument to run the command from a different directory . $ terraform -chdir=terraform fmt -recursive . | Plan the changes . Without saving the plan. . $ AWS_PROFILE=&quot;quickhacks&quot; terraform plan . Saving the plan so that it can be executed later on. . $ AWS_PROFILE=&quot;quickhacks&quot; terraform plan -out quickhacks.plan . | Apply the changes . $ AWS_PROFILE=&quot;quickhacks&quot; terraform apply . Or, use the -chdir argument to run the command from a different directory . $ AWS_PROFILE=&quot;quickhacks&quot; terraform -chdir=terraform apply . | Output values . $ AWS_PROFILE=&quot;quickhacks&quot; terraform output . Or, use the -chdir argument to run the command from a different directory . $ AWS_PROFILE=&quot;quickhacks&quot; terraform -chdir=terraform output . Change the format to JSON . $ AWS_PROFILE=&quot;quickhacks&quot; terraform output -json . | Destroy the resources . $ AWS_PROFILE=&quot;quickhacks&quot; terraform destroy . Or, use the -chdir argument to run the command from a different directory . $ AWS_PROFILE=&quot;quickhacks&quot; terraform -chdir=terraform destroy . | Versions . Terraform . $ terraform --version Terraform v0.15.0 . |",
-    "url": "https://albertattard.github.io/quickhacks/docs/aws/terraform/commands/",
-    "relUrl": "/docs/aws/terraform/commands/"
-  }
-  ,"8": {
     "title": "CLI Commands",
     "content": "Azure CLI Commands . References . https://docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli | . Commands . Version . $ az --version azure-cli 2.22.1 core 2.22.1 telemetry 1.0.6 Python location &#39;/usr/local/Cellar/azure-cli/2.22.1/libexec/bin/python&#39; Extensions directory &#39;/Users/albertattard/.azure/cliextensions&#39; Python (Darwin) 3.8.9 (default, Apr 3 2021, 01:51:00) [Clang 12.0.0 (clang-1200.0.32.29)] Legal docs and information: aka.ms/AzureCliLegal Your CLI is up-to-date. Please let us know how we are doing: https://aka.ms/azureclihats and let us know if you&#39;re interested in trying out our newest features: https://aka.ms/CLIUXstudy . | Login . $ az login . | Versions . azure CLI . $ az --version azure-cli 2.22.1 core 2.22.1 telemetry 1.0.6 Python location &#39;/usr/local/Cellar/azure-cli/2.22.1/libexec/bin/python&#39; Extensions directory &#39;/Users/albertattard/.azure/cliextensions&#39; Python (Darwin) 3.8.9 (default, Apr 3 2021, 01:51:00) [Clang 12.0.0 (clang-1200.0.32.29)] Legal docs and information: aka.ms/AzureCliLegal Your CLI is up-to-date. Please let us know how we are doing: https://aka.ms/azureclihats and let us know if you&#39;re interested in trying out our newest features: https://aka.ms/CLIUXstudy . |",
     "url": "https://albertattard.github.io/quickhacks/docs/azure/cli/commands/",
     "relUrl": "/docs/azure/cli/commands/"
+  }
+  ,"8": {
+    "title": "Terraform Commands",
+    "content": "Terraform Commands . Initialise terraform . $ AWS_PROFILE=&quot;quickhacks&quot; terraform init . Or, use the -chdir argument to run the command from a different directory . $ AWS_PROFILE=&quot;quickhacks&quot; terraform -chdir=terraform init . | Format code (recursive) . $ terraform fmt -recursive . Or, use the -chdir argument to run the command from a different directory . $ terraform -chdir=terraform fmt -recursive . | Plan the changes . Without saving the plan. . $ AWS_PROFILE=&quot;quickhacks&quot; terraform plan . Saving the plan so that it can be executed later on. . $ AWS_PROFILE=&quot;quickhacks&quot; terraform plan -out quickhacks.plan . | Apply the changes . $ AWS_PROFILE=&quot;quickhacks&quot; terraform apply . Or, use the -chdir argument to run the command from a different directory . $ AWS_PROFILE=&quot;quickhacks&quot; terraform -chdir=terraform apply . | Output values . $ AWS_PROFILE=&quot;quickhacks&quot; terraform output . Or, use the -chdir argument to run the command from a different directory . $ AWS_PROFILE=&quot;quickhacks&quot; terraform -chdir=terraform output . Change the format to JSON . $ AWS_PROFILE=&quot;quickhacks&quot; terraform output -json . | Destroy the resources . $ AWS_PROFILE=&quot;quickhacks&quot; terraform destroy . Or, use the -chdir argument to run the command from a different directory . $ AWS_PROFILE=&quot;quickhacks&quot; terraform -chdir=terraform destroy . | Versions . Terraform . $ terraform --version Terraform v0.15.0 . |",
+    "url": "https://albertattard.github.io/quickhacks/docs/aws/terraform/commands/",
+    "relUrl": "/docs/aws/terraform/commands/"
   }
   ,"9": {
     "title": "Components and Nested Components",
@@ -98,7 +98,7 @@
   }
   ,"17": {
     "title": "Error Prone",
-    "content": "Error Prone . References . https://plugins.gradle.org/plugin/net.ltgt.errorprone | https://github.com/tbroyer/gradle-errorprone-plugin | https://plugins.jetbrains.com/plugin/7349-error-prone-compiler | https://github.com/uber/NullAway | . File: build.gradle . plugins { id &quot;java&quot; id &quot;net.ltgt.errorprone&quot; version &quot;2.0.1&quot; id &quot;org.barfuin.gradle.taskinfo&quot; version &quot;1.0.5&quot; } java { toolchain { languageVersion = JavaLanguageVersion.of(16) } } repositories { mavenCentral() } dependencies { def errorproneVersion = &quot;2.6.0&quot; def nullawayVersion = &quot;0.9.1&quot; errorprone &quot;com.google.errorprone:error_prone_core:${errorproneVersion}&quot; errorprone(&quot;com.uber.nullaway:nullaway:$nullawayVersion&quot;) } tasks.withType(JavaCompile).configureEach { options.errorprone.enable(&quot;RemoveUnusedImports&quot;) options.errorprone.check(&quot;NullAway&quot;, net.ltgt.gradle.errorprone.CheckSeverity.ERROR) options.errorprone.option(&quot;NullAway:AnnotatedPackages&quot;, &quot;quickhack&quot;) } . File: src/main/java/quickhack/Examples.java . &#9888; The following example does not compile!!The following example will fail to compile due to the error prone checks package quickhack; import java.time.LocalDateTime; public class Examples { public static void main(final String[] args) { int a = 7; int b = 42; logf(&quot;%s is the answer to the ultimate question of life, the universe, and everything&quot;, b); String text = getString(); printLength(text); } private static String getString() { return null; } private static void printLength(String string) { System.out.printf(&quot;The string is %d long&quot;, string.length()); } private static void logf(final String pattern, final Object... params) { log(String.format(pattern, params)); } private static void log(final String message) { System.out.printf(&quot;[%tT] %s%n&quot;, System.currentTimeMillis(), message); } } . Run Error Prone checks . The build will fail as one of the failed checks has error level. . $ ./gradlew compileJava &gt; Task :compileJava /quickhacks/gradle/error-prone/src/main/java/quickhack/Examples.java:8: warning: [UnusedVariable] The local variable &#39;a&#39; is never read. int a = 7; ^ (see https://errorprone.info/bugpattern/UnusedVariable) Did you mean to remove this line? /quickhacks/gradle/error-prone/src/main/java/quickhack/Examples.java:3: Note: [RemoveUnusedImports] Unused imports: java.time.LocalDateTime import java.time.LocalDateTime; ^ (see https://errorprone.info/bugpattern/RemoveUnusedImports) Did you mean to remove this line? /quickhacks/gradle/error-prone/src/main/java/quickhack/Examples.java:17: error: [NullAway] returning @Nullable expression from method with @NonNull return type return null; ^ (see http://t.uber.com/nullaway ) /quickhacks/gradle/error-prone/src/main/java/quickhack/Examples.java:24: warning: [AnnotateFormatMethod] This method passes a pair of parameters through to String.format, but the enclosing method wasn&#39;t annotated @FormatMethod. Doing so gives compile-time rather than run-time protection against malformed format strings. private static void logf(final String pattern, final Object... params) { ^ (see https://errorprone.info/bugpattern/AnnotateFormatMethod) 1 error 2 warnings &gt; Task :compileJava FAILED FAILURE: Build failed with an exception. * What went wrong: Execution failed for task &#39;:compileJava&#39;. &gt; Compilation failed; see the compiler error output for details. * Try: Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights. * Get more help at https://help.gradle.org BUILD FAILED in 3s 1 actionable task: 1 executed . Versions . Gradle . $ ./gradlew --version Gradle 7.0 Build time: 2021-04-09 22:27:31 UTC Revision: d5661e3f0e07a8caff705f1badf79fb5df8022c4 Kotlin: 1.4.31 Groovy: 3.0.7 Ant: Apache Ant(TM) version 1.10.9 compiled on September 27 2020 JVM: 16 (AdoptOpenJDK 16+36) OS: Mac OS X 10.16 x86_64 . | Java . $ java --version openjdk 16 2021-03-16 OpenJDK Runtime Environment AdoptOpenJDK (build 16+36) OpenJDK 64-Bit Server VM AdoptOpenJDK (build 16+36, mixed mode, sharing) . |",
+    "content": "Error Prone . References . https://plugins.gradle.org/plugin/net.ltgt.errorprone | https://github.com/tbroyer/gradle-errorprone-plugin | https://plugins.jetbrains.com/plugin/7349-error-prone-compiler | https://github.com/uber/NullAway | . File: build.gradle . plugins { id &quot;java&quot; id &quot;net.ltgt.errorprone&quot; version &quot;2.0.1&quot; id &quot;org.barfuin.gradle.taskinfo&quot; version &quot;1.0.5&quot; } java { toolchain { languageVersion = JavaLanguageVersion.of(16) } } repositories { mavenCentral() } dependencies { def errorproneVersion = &quot;2.6.0&quot; def nullawayVersion = &quot;0.9.1&quot; errorprone &quot;com.google.errorprone:error_prone_core:${errorproneVersion}&quot; errorprone(&quot;com.uber.nullaway:nullaway:$nullawayVersion&quot;) } tasks.withType(JavaCompile).configureEach { options.errorprone.enable(&quot;RemoveUnusedImports&quot;) options.errorprone.check(&quot;NullAway&quot;, net.ltgt.gradle.errorprone.CheckSeverity.ERROR) options.errorprone.option(&quot;NullAway:AnnotatedPackages&quot;, &quot;quickhack&quot;) } . File: src/main/java/quickhacks/Examples.java . &#9888; The following example does not compile!!The following example will fail to compile due to the error prone checks package quickhacks; import java.time.LocalDateTime; public class Examples { public static void main(final String[] args) { int a = 7; int b = 42; logf(&quot;%s is the answer to the ultimate question of life, the universe, and everything&quot;, b); String text = getString(); printLength(text); } private static String getString() { return null; } private static void printLength(String string) { System.out.printf(&quot;The string is %d long&quot;, string.length()); } private static void logf(final String pattern, final Object... params) { log(String.format(pattern, params)); } private static void log(final String message) { System.out.printf(&quot;[%tT] %s%n&quot;, System.currentTimeMillis(), message); } } . Run Error Prone checks . The build will fail as one of the failed checks has error level. . $ ./gradlew compileJava &gt; Task :compileJava /quickhacks/gradle/error-prone/src/main/java/quickhacks/Examples.java:8: warning: [UnusedVariable] The local variable &#39;a&#39; is never read. int a = 7; ^ (see https://errorprone.info/bugpattern/UnusedVariable) Did you mean to remove this line? /quickhacks/gradle/error-prone/src/main/java/quickhacks/Examples.java:3: Note: [RemoveUnusedImports] Unused imports: java.time.LocalDateTime import java.time.LocalDateTime; ^ (see https://errorprone.info/bugpattern/RemoveUnusedImports) Did you mean to remove this line? /quickhacks/gradle/error-prone/src/main/java/quickhacks/Examples.java:17: error: [NullAway] returning @Nullable expression from method with @NonNull return type return null; ^ (see http://t.uber.com/nullaway ) /quickhacks/gradle/error-prone/src/main/java/quickhacks/Examples.java:24: warning: [AnnotateFormatMethod] This method passes a pair of parameters through to String.format, but the enclosing method wasn&#39;t annotated @FormatMethod. Doing so gives compile-time rather than run-time protection against malformed format strings. private static void logf(final String pattern, final Object... params) { ^ (see https://errorprone.info/bugpattern/AnnotateFormatMethod) 1 error 2 warnings &gt; Task :compileJava FAILED FAILURE: Build failed with an exception. * What went wrong: Execution failed for task &#39;:compileJava&#39;. &gt; Compilation failed; see the compiler error output for details. * Try: Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output. Run with --scan to get full insights. * Get more help at https://help.gradle.org BUILD FAILED in 3s 1 actionable task: 1 executed . Versions . Gradle . $ ./gradlew --version Gradle 7.0 Build time: 2021-04-09 22:27:31 UTC Revision: d5661e3f0e07a8caff705f1badf79fb5df8022c4 Kotlin: 1.4.31 Groovy: 3.0.7 Ant: Apache Ant(TM) version 1.10.9 compiled on September 27 2020 JVM: 16 (AdoptOpenJDK 16+36) OS: Mac OS X 10.16 x86_64 . | Java . $ java --version openjdk 16 2021-03-16 OpenJDK Runtime Environment AdoptOpenJDK (build 16+36) OpenJDK 64-Bit Server VM AdoptOpenJDK (build 16+36, mixed mode, sharing) . |",
     "url": "https://albertattard.github.io/quickhacks/docs/gradle/error-prone/",
     "relUrl": "/docs/gradle/error-prone/"
   }
@@ -145,40 +145,40 @@
     "relUrl": "/docs/git/ignore-uncommitted-changes-to-file/"
   }
   ,"25": {
-    "title": "Web",
-    "content": "Spring Web . A set of Spring Web quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/spring/web/",
-    "relUrl": "/docs/spring/web/"
+    "title": "Testing (Vue)",
+    "content": "Testing (Vue) .",
+    "url": "https://albertattard.github.io/quickhacks/docs/vue/testing/",
+    "relUrl": "/docs/vue/testing/"
   }
   ,"26": {
+    "title": "Home",
+    "content": "Quickhacks . Many times I had to look for an old example where I did something similar, like create an S3 bucket using Terraform. I have decided to compile a list of code fragments and short examples and called this compilation quickhacks. I got the name from the Cyberpunk 2077 game. As a netrunner you can use quickhacks to defeat your challenges and proceed. I love that game despite its many flaws. . The quickhacks are not meant to be a tutorial nor to provide detailed descriptions. Instead, these are meant to be a quick reference of code fragments. .",
+    "url": "https://albertattard.github.io/quickhacks/",
+    "relUrl": "/"
+  }
+  ,"27": {
     "title": "Java",
     "content": "Java . A set of Java quickhacks. .",
     "url": "https://albertattard.github.io/quickhacks/docs/java/",
     "relUrl": "/docs/java/"
   }
-  ,"27": {
-    "title": "Unsorted",
-    "content": "Unsorted . These items may move elsewhere. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/unsorted/",
-    "relUrl": "/docs/unsorted/"
-  }
   ,"28": {
-    "title": "Docker",
-    "content": "Docker . A set of docker and docker-compose quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/docker/",
-    "relUrl": "/docs/docker/"
-  }
-  ,"29": {
     "title": "Apache POI",
     "content": "Apache POI . A set of Apache POI, the Java API for Microsoft Documents quickhacks. .",
     "url": "https://albertattard.github.io/quickhacks/docs/java/apache-poi/",
     "relUrl": "/docs/java/apache-poi/"
   }
+  ,"29": {
+    "title": "Web",
+    "content": "Spring Web . A set of Spring Web quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/spring/web/",
+    "relUrl": "/docs/spring/web/"
+  }
   ,"30": {
-    "title": "Testing (Vue)",
-    "content": "Testing (Vue) .",
-    "url": "https://albertattard.github.io/quickhacks/docs/vue/testing/",
-    "relUrl": "/docs/vue/testing/"
+    "title": "Terraform (AWS)",
+    "content": "Terraform . A set of AWS and Terraform quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/aws/terraform/",
+    "relUrl": "/docs/aws/terraform/"
   }
   ,"31": {
     "title": "Spring",
@@ -193,16 +193,16 @@
     "relUrl": "/docs/gradle/"
   }
   ,"33": {
-    "title": "Terraform (AWS)",
-    "content": "Terraform . A set of AWS and Terraform quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/aws/terraform/",
-    "relUrl": "/docs/aws/terraform/"
+    "title": "Unsorted",
+    "content": "Unsorted . These items may move elsewhere. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/unsorted/",
+    "relUrl": "/docs/unsorted/"
   }
   ,"34": {
-    "title": "Home",
-    "content": "Quickhacks . Many times I had to look for an old example where I did something similar, like create an S3 bucket using Terraform. I have decided to compile a list of code fragments and short examples and called this compilation quickhacks. I got the name from the Cyberpunk 2077 game. As a netrunner you can use quickhacks to defeat your challenges and proceed. I love that game despite its many flaws. . The quickhacks are not meant to be a tutorial nor to provide detailed descriptions. Instead, these are meant to be a quick reference of code fragments. .",
-    "url": "https://albertattard.github.io/quickhacks/",
-    "relUrl": "/"
+    "title": "Git",
+    "content": "Git . A set of Git quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/git/",
+    "relUrl": "/docs/git/"
   }
   ,"35": {
     "title": "Java 11",
@@ -211,16 +211,16 @@
     "relUrl": "/docs/java/java-11/"
   }
   ,"36": {
-    "title": "AWS",
-    "content": "AWS .",
-    "url": "https://albertattard.github.io/quickhacks/docs/aws/",
-    "relUrl": "/docs/aws/"
+    "title": "CLI (Azure)",
+    "content": "CLI . A set of Azure CLI quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/azure/cli/",
+    "relUrl": "/docs/azure/cli/"
   }
   ,"37": {
-    "title": "Git",
-    "content": "Git . A set of Git quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/git/",
-    "relUrl": "/docs/git/"
+    "title": "Docker",
+    "content": "Docker . A set of docker and docker-compose quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/docker/",
+    "relUrl": "/docs/docker/"
   }
   ,"38": {
     "title": "CLI (AWS)",
@@ -229,34 +229,34 @@
     "relUrl": "/docs/aws/cli/"
   }
   ,"39": {
-    "title": "Vue",
-    "content": "Vue . A set of Vue quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/vue/",
-    "relUrl": "/docs/vue/"
+    "title": "Azure",
+    "content": "Azure .",
+    "url": "https://albertattard.github.io/quickhacks/docs/azure/",
+    "relUrl": "/docs/azure/"
   }
   ,"40": {
-    "title": "Terraform (Azure)",
-    "content": "Terraform . A set of Azure and Terraform quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/azure/terraform/",
-    "relUrl": "/docs/azure/terraform/"
-  }
-  ,"41": {
     "title": "Micronaut (Azure)",
     "content": "Micronaut . A set of Micronaut quickhacks. .",
     "url": "https://albertattard.github.io/quickhacks/docs/azure/micronaut/",
     "relUrl": "/docs/azure/micronaut/"
   }
+  ,"41": {
+    "title": "Terraform (Azure)",
+    "content": "Terraform . A set of Azure and Terraform quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/azure/terraform/",
+    "relUrl": "/docs/azure/terraform/"
+  }
   ,"42": {
-    "title": "CLI (Azure)",
-    "content": "CLI . A set of Azure CLI quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/azure/cli/",
-    "relUrl": "/docs/azure/cli/"
+    "title": "Vue",
+    "content": "Vue . A set of Vue quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/vue/",
+    "relUrl": "/docs/vue/"
   }
   ,"43": {
-    "title": "Azure",
-    "content": "Azure .",
-    "url": "https://albertattard.github.io/quickhacks/docs/azure/",
-    "relUrl": "/docs/azure/"
+    "title": "AWS",
+    "content": "AWS .",
+    "url": "https://albertattard.github.io/quickhacks/docs/aws/",
+    "relUrl": "/docs/aws/"
   }
   ,"44": {
     "title": "Install Azure CLI",
@@ -415,36 +415,42 @@
     "relUrl": "/docs/vue/show/"
   }
   ,"70": {
+    "title": "Spotbugs",
+    "content": "Spotbugs . {% include custom/pending.html details=”I am still working on this one. I am still trying to figure out how to get this working well” %} . I had better luck with [error prone]({{ “/docs/gradle/error-prone/” | absolute_url }}) so far, especially with the NullPointerException detection. . References . https://plugins.gradle.org/plugin/com.github.spotbugs | https://spotbugs.readthedocs.io/en/latest/gradle.html | https://github.com/spotbugs/spotbugs/releases | . File: build.gradle . {% highlight gradle %} {% raw_include quickhacks/gradle/spotbugs/build.gradle %} {% endhighlight %} . File: src/main/java/quickhacks/Examples.java . {% highlight java %} {% raw_include quickhacks/gradle/spotbugs/src/main/java/quickhacks/Examples.java %} {% endhighlight %} . Run Spotbugs checks . $ ./gradlew check . Versions . Gradle . $ ./gradlew --version Gradle 7.0 Build time: 2021-04-09 22:27:31 UTC Revision: d5661e3f0e07a8caff705f1badf79fb5df8022c4 Kotlin: 1.4.31 Groovy: 3.0.7 Ant: Apache Ant(TM) version 1.10.9 compiled on September 27 2020 JVM: 16 (AdoptOpenJDK 16+36) OS: Mac OS X 10.16 x86_64 . | Java . $ java --version openjdk 16 2021-03-16 OpenJDK Runtime Environment AdoptOpenJDK (build 16+36) OpenJDK 64-Bit Server VM AdoptOpenJDK (build 16+36, mixed mode, sharing) . |",
+    "url": "https://albertattard.github.io/quickhacks/docs/gradle/spotbugs/",
+    "relUrl": "/docs/gradle/spotbugs/"
+  }
+  ,"71": {
     "title": "Spotless",
     "content": "Spotless . Spotless is a versatile and flexible code formatter that also provides a gradle plugin. This hooks to the build and fails it if the formatting does not abide to the configured format. . References . https://github.com/diffplug/spotless | https://github.com/google/google-java-format | . File: build.gradle . {% highlight gradle %} {% raw_include quickhacks/gradle/spotless/build.gradle %} {% endhighlight %} . File: src/main/java/quickhacks/Main.java . {% highlight java %} {% raw_include quickhacks/gradle/spotless/src/main/java/quickhacks/Main.java %} {% endhighlight %} . Run Spotless formatter . $ ./gradlew spotlessApply . Run Spotless checks . The build will fail if one or more files do not adhere to the required format. Run spotlessApply to format the code first. . $ ./gradlew check . Versions . Gradle . $ ./gradlew --version Gradle 7.0 Build time: 2021-04-09 22:27:31 UTC Revision: d5661e3f0e07a8caff705f1badf79fb5df8022c4 Kotlin: 1.4.31 Groovy: 3.0.7 Ant: Apache Ant(TM) version 1.10.9 compiled on September 27 2020 JVM: 16 (AdoptOpenJDK 16+36) OS: Mac OS X 10.16 x86_64 . | Java . $ java --version openjdk 16 2021-03-16 OpenJDK Runtime Environment AdoptOpenJDK (build 16+36) OpenJDK 64-Bit Server VM AdoptOpenJDK (build 16+36, mixed mode, sharing) . |",
     "url": "https://albertattard.github.io/quickhacks/docs/gradle/spotless/",
     "relUrl": "/docs/gradle/spotless/"
   }
-  ,"71": {
+  ,"72": {
     "title": "Stroop effect",
     "content": "Stroop effect . References . https://en.wikipedia.org/wiki/Stroop_effect | . Stroop effect . In psychology, the Stroop effect is the delay in reaction time between congruent and incongruent stimuli. . The effect has been used to create a psychological test (the Stroop test) that is widely used in clinical practice and investigation. . A basic task that demonstrates this effect occurs when there is a mismatch between the name of a color (e.g., “blue”, “green”, or “red”) and the color it is printed on (i.e., the word “red” printed in blue ink instead of red ink). When asked to name the color of the word it takes longer and is more prone to errors when the color of the ink does not match the name of the color. .",
     "url": "https://albertattard.github.io/quickhacks/docs/unsorted/stroop-effect/",
     "relUrl": "/docs/unsorted/stroop-effect/"
   }
-  ,"72": {
+  ,"73": {
     "title": "Structurizr DSL",
     "content": "Structurizr DSL . References . https://github.com/structurizr/dsl | . Structurizr DSL . Structurizr DSL is a way to create Structurizr software architecture models based upon the C4 model using a textual domain specific language (DSL). The Structurizr DSL has appeared on the ThoughtWorks Tech Radar - Techniques - Diagrams as code. .",
     "url": "https://albertattard.github.io/quickhacks/docs/unsorted/Structurizr%20DSL/",
     "relUrl": "/docs/unsorted/Structurizr DSL/"
   }
-  ,"73": {
+  ,"74": {
     "title": "Task Dependencies",
     "content": "Task Dependencies . References . https://plugins.gradle.org/plugin/org.barfuin.gradle.taskinfo | https://youtu.be/Vxfk7OsEekA?t=105 | . File: build.gradle . {% highlight gradle %} {% raw_include quickhacks/gradle/task-dependencies/build.gradle %} {% endhighlight %} . Display the Task Dependencies . $ ./gradlew tiTree build &gt; Task :tiTree :build (org.gradle.api.DefaultTask) + :assemble (org.gradle.api.DefaultTask) | ` :jar (org.gradle.api.tasks.bundling.Jar) | ` :classes (org.gradle.api.DefaultTask) | + :compileJava (org.gradle.api.tasks.compile.JavaCompile) | ` :processResources (org.gradle.language.jvm.tasks.ProcessResources) ` :check (org.gradle.api.DefaultTask) ` :test (org.gradle.api.tasks.testing.Test) + :classes (org.gradle.api.DefaultTask) | + :compileJava (org.gradle.api.tasks.compile.JavaCompile) | ` :processResources (org.gradle.language.jvm.tasks.ProcessResources) ` :testClasses (org.gradle.api.DefaultTask) + :compileTestJava (org.gradle.api.tasks.compile.JavaCompile) | ` :classes (org.gradle.api.DefaultTask) | + :compileJava (org.gradle.api.tasks.compile.JavaCompile) | ` :processResources (org.gradle.language.jvm.tasks.ProcessResources) ` :processTestResources (org.gradle.language.jvm.tasks.ProcessResources) BUILD SUCCESSFUL in 768ms 1 actionable task: 1 executed . Versions . Gradle . $ ./gradlew --version Gradle 7.0 Build time: 2021-04-09 22:27:31 UTC Revision: d5661e3f0e07a8caff705f1badf79fb5df8022c4 Kotlin: 1.4.31 Groovy: 3.0.7 Ant: Apache Ant(TM) version 1.10.9 compiled on September 27 2020 JVM: 16 (AdoptOpenJDK 16+36) OS: Mac OS X 10.16 x86_64 . |",
     "url": "https://albertattard.github.io/quickhacks/docs/gradle/task-dependencies/",
     "relUrl": "/docs/gradle/task-dependencies/"
   }
-  ,"74": {
+  ,"75": {
     "title": "Tricorder",
     "content": "Tricorder . References . https://research.google/pubs/pub43322/ | . Tricorder . Static analysis tools help developers find bugs, improve code readability, and ensure consistent style across a project. However, these tools can be difficult to smoothly integrate with each other and into the developer workflow, particularly when scaling to large codebases. We present Tricorder, a program analysis platform aimed at building a data-driven ecosystem around program analysis. We present a set of guiding principles for our program analysis tools and a scalable architecture for an analysis platform implementing these principles. We include an empirical, in-situ evaluation of the tool as it is used by developers across Google that shows the usefulness and impact of the platform. .",
     "url": "https://albertattard.github.io/quickhacks/docs/unsorted/tricorder/",
     "relUrl": "/docs/unsorted/tricorder/"
   }
-  ,"75": {
+  ,"76": {
     "title": "VM (Publicly Accessible)",
     "content": "Virtual Machine (Publicly Accessible) . {% include custom/pending.html details=”I am still working on this one” %} . . Terraform . File: terraform.tf . {% highlight terraform %} {% raw_include quickhacks/azure/terraform/vm-publicly-accessible/terraform.tf %} {% endhighlight %} . File: providers.tf . {% highlight terraform %} {% raw_include quickhacks/azure/terraform/vm-publicly-accessible/providers.tf %} {% endhighlight %} . File: main.tf . {% highlight terraform %} {% raw_include quickhacks/azure/terraform/vm-publicly-accessible/main.tf %} {% endhighlight %} . File: output.tf . {% highlight terraform %} {% raw_include quickhacks/azure/terraform/vm-publicly-accessible/output.tf %} {% endhighlight %} . SSH to VM . Connect to the VM instance using the private key . $ . Versions . Terraform . $ terraform --version Terraform v0.15.0 . | SSH . $ ssh -V OpenSSH_8.1p1, LibreSSL 2.7.3 . |",
     "url": "https://albertattard.github.io/quickhacks/docs/azure/terraform/vm-publicly-accessible/",
