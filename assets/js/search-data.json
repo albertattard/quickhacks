@@ -445,30 +445,36 @@
     "relUrl": "/docs/gradle/spotless/"
   }
   ,"75": {
+    "title": "SSH Authentication",
+    "content": "SSH Authentication . Setup . Create SSH . Pick the key type supported by your remote repository. Not all repositories support all types of keys. Put your email address as a comment to the key, as recommended by GitHub . . Use the Edwards-curve Digital Signature Algorithm (Ed25519 is the EdDSA signature scheme using SHA-512 (SHA-2) and Curve25519). This is only supported by newer repositories. . $ ssh-keygen -t ed25519 -C &quot;albertattard@gmail.com&quot; . | Use the older RSA Algorithm, supported by most repositories . $ ssh-keygen -t rsa -C &quot;albertattard@gmail.com&quot; . | . Do not use one SSH key for all repositories. Instead, create one for every environment, such as . Personal things | Profession/Work development environment | Profession/Work production environment | . You can do that by creating as many SSH key-pairs as needed. . Secure your private key with a password. . Following is an example . $ ssh-keygen -t rsa -C &quot;albertattard@gmail.com&quot; Generating public/private rsa key pair. Enter file in which to save the key (/Users/albertattard/.ssh/id_rsa): /Users/albertattard/.ssh/id_rsa_dev Enter passphrase (empty for no passphrase): Enter same passphrase again: Your identification has been saved in /Users/albertattard/.ssh/id_rsa_dev. Your public key has been saved in /Users/albertattard/.ssh/id_rsa_dev.pub. The key fingerprint is: SHA256:Fvh13Ra2aOJuehYpEu2sec7RzQzc5MckQMe2ZuL1nqw albertattard@gmail.com The key&#39;s randomart image is: +[RSA 3072]-+ | .o.. o | | . o+o.o| | . o ..o=ooo| | o +oo*=+. | | S .+*o.o | | o +o+= .. | | +..+.+o .| | o..+o + | | o+o E. | +-[SHA256]--+ . | Upload the public key to the remote repository. . Copy Public Key to the clipboard . $ pbcopy &lt; ~/.ssh/id_rsa_dev.pub . Add the SSH Key to the repo . | Configure SSH . Edit the ~/.ssh/config file and add an entry so that GIT can use SSH to authenticate . $ vi ~/.ssh/config . Add the following . Host dev-project AddKeysToAgent yes UseKeychain yes User git Hostname github.com IdentityFile ~/.ssh/id_rsa_dev IdentitiesOnly yes . Using the above configuration, the path dev-project:albertattard/quickhacks-source.git is equivalent to the following: git@github.com:albertattard/quickhacks-source.git, and the private key file ~/.ssh/id_rsa_dev. . | Access the repository . $ git clone dev-project:albertattard/quickhacks-source.git . | Versions . Git . $ git --version git version 2.30.1 (Apple Git-130) . | SSH . $ ssh -V OpenSSH_8.1p1, LibreSSL 2.7.3 . |",
+    "url": "https://albertattard.github.io/quickhacks/docs/git/ssh-authentication/",
+    "relUrl": "/docs/git/ssh-authentication/"
+  }
+  ,"76": {
     "title": "Stroop effect",
     "content": "Stroop effect . References . https://en.wikipedia.org/wiki/Stroop_effect | . Stroop effect . In psychology, the Stroop effect is the delay in reaction time between congruent and incongruent stimuli. . The effect has been used to create a psychological test (the Stroop test) that is widely used in clinical practice and investigation. . A basic task that demonstrates this effect occurs when there is a mismatch between the name of a color (e.g., “blue”, “green”, or “red”) and the color it is printed on (i.e., the word “red” printed in blue ink instead of red ink). When asked to name the color of the word it takes longer and is more prone to errors when the color of the ink does not match the name of the color. .",
     "url": "https://albertattard.github.io/quickhacks/docs/unsorted/stroop-effect/",
     "relUrl": "/docs/unsorted/stroop-effect/"
   }
-  ,"76": {
+  ,"77": {
     "title": "Structurizr DSL",
     "content": "Structurizr DSL . References . https://github.com/structurizr/dsl | . Structurizr DSL . Structurizr DSL is a way to create Structurizr software architecture models based upon the C4 model using a textual domain specific language (DSL). The Structurizr DSL has appeared on the ThoughtWorks Tech Radar - Techniques - Diagrams as code. .",
     "url": "https://albertattard.github.io/quickhacks/docs/unsorted/Structurizr%20DSL/",
     "relUrl": "/docs/unsorted/Structurizr DSL/"
   }
-  ,"77": {
+  ,"78": {
     "title": "Task Dependencies",
     "content": "Task Dependencies . References . https://plugins.gradle.org/plugin/org.barfuin.gradle.taskinfo | https://youtu.be/Vxfk7OsEekA?t=105 | . File: build.gradle . {% highlight gradle %} {% raw_include quickhacks/gradle/task-dependencies/build.gradle %} {% endhighlight %} . Display the Task Dependencies . $ ./gradlew tiTree build &gt; Task :tiTree :build (org.gradle.api.DefaultTask) + :assemble (org.gradle.api.DefaultTask) | ` :jar (org.gradle.api.tasks.bundling.Jar) | ` :classes (org.gradle.api.DefaultTask) | + :compileJava (org.gradle.api.tasks.compile.JavaCompile) | ` :processResources (org.gradle.language.jvm.tasks.ProcessResources) ` :check (org.gradle.api.DefaultTask) ` :test (org.gradle.api.tasks.testing.Test) + :classes (org.gradle.api.DefaultTask) | + :compileJava (org.gradle.api.tasks.compile.JavaCompile) | ` :processResources (org.gradle.language.jvm.tasks.ProcessResources) ` :testClasses (org.gradle.api.DefaultTask) + :compileTestJava (org.gradle.api.tasks.compile.JavaCompile) | ` :classes (org.gradle.api.DefaultTask) | + :compileJava (org.gradle.api.tasks.compile.JavaCompile) | ` :processResources (org.gradle.language.jvm.tasks.ProcessResources) ` :processTestResources (org.gradle.language.jvm.tasks.ProcessResources) BUILD SUCCESSFUL in 768ms 1 actionable task: 1 executed . Versions . Gradle . $ ./gradlew --version Gradle 7.0 Build time: 2021-04-09 22:27:31 UTC Revision: d5661e3f0e07a8caff705f1badf79fb5df8022c4 Kotlin: 1.4.31 Groovy: 3.0.7 Ant: Apache Ant(TM) version 1.10.9 compiled on September 27 2020 JVM: 16 (AdoptOpenJDK 16+36) OS: Mac OS X 10.16 x86_64 . |",
     "url": "https://albertattard.github.io/quickhacks/docs/gradle/task-dependencies/",
     "relUrl": "/docs/gradle/task-dependencies/"
   }
-  ,"78": {
+  ,"79": {
     "title": "Tricorder",
     "content": "Tricorder . References . https://research.google/pubs/pub43322/ | . Tricorder . Static analysis tools help developers find bugs, improve code readability, and ensure consistent style across a project. However, these tools can be difficult to smoothly integrate with each other and into the developer workflow, particularly when scaling to large codebases. We present Tricorder, a program analysis platform aimed at building a data-driven ecosystem around program analysis. We present a set of guiding principles for our program analysis tools and a scalable architecture for an analysis platform implementing these principles. We include an empirical, in-situ evaluation of the tool as it is used by developers across Google that shows the usefulness and impact of the platform. .",
     "url": "https://albertattard.github.io/quickhacks/docs/unsorted/tricorder/",
     "relUrl": "/docs/unsorted/tricorder/"
   }
-  ,"79": {
+  ,"80": {
     "title": "VM (Publicly Accessible)",
     "content": "Virtual Machine (Publicly Accessible) . {% include custom/pending.html details=”I am still working on this one” %} . Terraform . File: terraform.tf . {% highlight terraform %} {% raw_include quickhacks/azure/terraform/vm-publicly-accessible/terraform.tf %} {% endhighlight %} . File: providers.tf . {% highlight terraform %} {% raw_include quickhacks/azure/terraform/vm-publicly-accessible/providers.tf %} {% endhighlight %} . File: main.tf . {% highlight terraform %} {% raw_include quickhacks/azure/terraform/vm-publicly-accessible/main.tf %} {% endhighlight %} . File: output.tf . {% highlight terraform %} {% raw_include quickhacks/azure/terraform/vm-publicly-accessible/output.tf %} {% endhighlight %} . SSH to VM . Connect to the VM instance using the private key . $ . Versions . Terraform . $ terraform --version Terraform v0.15.0 . | SSH . $ ssh -V OpenSSH_8.1p1, LibreSSL 2.7.3 . |",
     "url": "https://albertattard.github.io/quickhacks/docs/azure/terraform/vm-publicly-accessible/",
