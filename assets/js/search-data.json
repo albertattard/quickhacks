@@ -37,16 +37,16 @@
     "relUrl": "/docs/git/change-last-commit-message/"
   }
   ,"7": {
-    "title": "Terraform Commands",
-    "content": "Terraform Commands . Initialise terraform . $ AWS_PROFILE=&quot;quickhacks&quot; terraform init . Or, use the -chdir argument to run the command from a different directory . $ AWS_PROFILE=&quot;quickhacks&quot; terraform -chdir=terraform init . | Format code (recursive) . $ terraform fmt -recursive . Or, use the -chdir argument to run the command from a different directory . $ terraform -chdir=terraform fmt -recursive . | Plan the changes . Without saving the plan. . $ AWS_PROFILE=&quot;quickhacks&quot; terraform plan . Saving the plan so that it can be executed later on. . $ AWS_PROFILE=&quot;quickhacks&quot; terraform plan -out quickhacks.plan . | Apply the changes . $ AWS_PROFILE=&quot;quickhacks&quot; terraform apply . Or, use the -chdir argument to run the command from a different directory . $ AWS_PROFILE=&quot;quickhacks&quot; terraform -chdir=terraform apply . | Output values . $ AWS_PROFILE=&quot;quickhacks&quot; terraform output . Or, use the -chdir argument to run the command from a different directory . $ AWS_PROFILE=&quot;quickhacks&quot; terraform -chdir=terraform output . Change the format to JSON . $ AWS_PROFILE=&quot;quickhacks&quot; terraform output -json . | Destroy the resources . $ AWS_PROFILE=&quot;quickhacks&quot; terraform destroy . Or, use the -chdir argument to run the command from a different directory . $ AWS_PROFILE=&quot;quickhacks&quot; terraform -chdir=terraform destroy . | Versions . Terraform . $ terraform --version Terraform v0.15.0 . |",
-    "url": "https://albertattard.github.io/quickhacks/docs/aws/terraform/commands/",
-    "relUrl": "/docs/aws/terraform/commands/"
-  }
-  ,"8": {
     "title": "CLI Commands",
     "content": "Azure CLI Commands . References . https://docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli | . Commands . Version . $ az --version azure-cli 2.22.1 core 2.22.1 telemetry 1.0.6 Python location &#39;/usr/local/Cellar/azure-cli/2.22.1/libexec/bin/python&#39; Extensions directory &#39;/Users/albertattard/.azure/cliextensions&#39; Python (Darwin) 3.8.9 (default, Apr 3 2021, 01:51:00) [Clang 12.0.0 (clang-1200.0.32.29)] Legal docs and information: aka.ms/AzureCliLegal Your CLI is up-to-date. Please let us know how we are doing: https://aka.ms/azureclihats and let us know if you&#39;re interested in trying out our newest features: https://aka.ms/CLIUXstudy . | Login . $ az login . | Versions . azure CLI . $ az --version azure-cli 2.22.1 core 2.22.1 telemetry 1.0.6 Python location &#39;/usr/local/Cellar/azure-cli/2.22.1/libexec/bin/python&#39; Extensions directory &#39;/Users/albertattard/.azure/cliextensions&#39; Python (Darwin) 3.8.9 (default, Apr 3 2021, 01:51:00) [Clang 12.0.0 (clang-1200.0.32.29)] Legal docs and information: aka.ms/AzureCliLegal Your CLI is up-to-date. Please let us know how we are doing: https://aka.ms/azureclihats and let us know if you&#39;re interested in trying out our newest features: https://aka.ms/CLIUXstudy . |",
     "url": "https://albertattard.github.io/quickhacks/docs/azure/cli/commands/",
     "relUrl": "/docs/azure/cli/commands/"
+  }
+  ,"8": {
+    "title": "Terraform Commands",
+    "content": "Terraform Commands . Initialise terraform . $ AWS_PROFILE=&quot;quickhacks&quot; terraform init . Or, use the -chdir argument to run the command from a different directory . $ AWS_PROFILE=&quot;quickhacks&quot; terraform -chdir=terraform init . | Format code (recursive) . $ terraform fmt -recursive . Or, use the -chdir argument to run the command from a different directory . $ terraform -chdir=terraform fmt -recursive . | Plan the changes . Without saving the plan. . $ AWS_PROFILE=&quot;quickhacks&quot; terraform plan . Saving the plan so that it can be executed later on. . $ AWS_PROFILE=&quot;quickhacks&quot; terraform plan -out quickhacks.plan . | Apply the changes . $ AWS_PROFILE=&quot;quickhacks&quot; terraform apply . Or, use the -chdir argument to run the command from a different directory . $ AWS_PROFILE=&quot;quickhacks&quot; terraform -chdir=terraform apply . | Output values . $ AWS_PROFILE=&quot;quickhacks&quot; terraform output . Or, use the -chdir argument to run the command from a different directory . $ AWS_PROFILE=&quot;quickhacks&quot; terraform -chdir=terraform output . Change the format to JSON . $ AWS_PROFILE=&quot;quickhacks&quot; terraform output -json . | Destroy the resources . $ AWS_PROFILE=&quot;quickhacks&quot; terraform destroy . Or, use the -chdir argument to run the command from a different directory . $ AWS_PROFILE=&quot;quickhacks&quot; terraform -chdir=terraform destroy . | Versions . Terraform . $ terraform --version Terraform v0.15.0 . |",
+    "url": "https://albertattard.github.io/quickhacks/docs/aws/terraform/commands/",
+    "relUrl": "/docs/aws/terraform/commands/"
   }
   ,"9": {
     "title": "Components and Nested Components",
@@ -68,7 +68,7 @@
   }
   ,"12": {
     "title": "Cross-Origin Request Blocked",
-    "content": "Cross-Origin Request Blocked . The browser will block the return path if the CORS header Access-Control-Allow-Origin is missing. The web application still carries out its task and make the changes requested. Only the response is blocked by the browser. . . File: src/main/java/quickhacks/QuickhackController.java . package quickhacks; import org.slf4j.Logger; import org.slf4j.LoggerFactory; import org.springframework.web.bind.annotation.CrossOrigin; import org.springframework.web.bind.annotation.PostMapping; import org.springframework.web.bind.annotation.RequestParam; import org.springframework.web.bind.annotation.RestController; @RestController public class QuickhackController { private static final Logger LOGGER = LoggerFactory.getLogger(QuickhackController.class); @CrossOrigin @PostMapping(&quot;/&quot;) public void addName(@RequestParam(&quot;name&quot;) final String name) { LOGGER.debug(&quot;Name: {}&quot;, name); } } . File: build.gradle . plugins { id &#39;org.springframework.boot&#39; version &#39;2.4.5&#39; id &#39;io.spring.dependency-management&#39; version &#39;1.0.11.RELEASE&#39; id &#39;java&#39; } java { sourceCompatibility = JavaVersion.VERSION_16 targetCompatibility = JavaVersion.VERSION_16 } repositories { mavenCentral() } dependencies { implementation &#39;org.springframework.boot:spring-boot-starter-web&#39; testImplementation &#39;org.springframework.boot:spring-boot-starter-test&#39; } test { useJUnitPlatform() } . Versions . Java . $ java -version openjdk 16 2021-03-16 OpenJDK Runtime Environment AdoptOpenJDK (build 16+36) OpenJDK 64-Bit Server VM AdoptOpenJDK (build 16+36, mixed mode, sharing) . | Gradle . $ ./gradlew --version Gradle 7.0 Build time: 2021-04-09 22:27:31 UTC Revision: d5661e3f0e07a8caff705f1badf79fb5df8022c4 Kotlin: 1.4.31 Groovy: 3.0.7 Ant: Apache Ant(TM) version 1.10.9 compiled on September 27 2020 JVM: 11.0.10 (AdoptOpenJDK 11.0.10+9) OS: Mac OS X 10.16 x86_64 . | .",
+    "content": "Cross-Origin Request Blocked . The browser will block the return path if the CORS header Access-Control-Allow-Origin is missing. The web application still carries out its task and make the changes requested. Only the response is blocked by the browser. . . Spring Security can be used to also block request that are not coming from trusted origins. Refer to spring-security-cors for an example. . File: src/main/java/quickhacks/CorsConfiguration.java . package quickhacks; import org.springframework.context.annotation.Configuration; import org.springframework.web.servlet.config.annotation.CorsRegistry; import org.springframework.web.servlet.config.annotation.EnableWebMvc; import org.springframework.web.servlet.config.annotation.WebMvcConfigurer; @Configuration @EnableWebMvc public class CorsConfiguration implements WebMvcConfigurer { @Override public void addCorsMappings(final CorsRegistry registry) { registry.addMapping(&quot;/**&quot;) .allowedOrigins(&quot;http://localhost:3000&quot;); } } . File: src/test/java/quickhacks/CorsHeadersTest.java . &#9432; NoteRestTemplate makes use of the HttpUrlConnection class, which has the Origin header as one of the restricted headers. Set the sun.net.http.allowRestrictedHeaders property to true so that the Origin header is also sent. package quickhacks; import static java.util.Objects.requireNonNull; import static org.assertj.core.api.Assertions.assertThat; import org.junit.jupiter.api.DisplayName; import org.junit.jupiter.api.Test; import org.junit.jupiter.params.ParameterizedTest; import org.junit.jupiter.params.provider.ValueSource; import org.springframework.beans.factory.annotation.Autowired; import org.springframework.boot.test.context.SpringBootTest; import org.springframework.boot.test.web.client.TestRestTemplate; import org.springframework.http.HttpEntity; import org.springframework.http.HttpHeaders; import org.springframework.http.HttpMethod; import org.springframework.http.ResponseEntity; import org.springframework.util.LinkedMultiValueMap; @DisplayName(&quot;CORS Headers&quot;) @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT) class CorsHeadersTest { private static final String ORIGIN = &quot;http://localhost:3000&quot;; @Autowired private transient TestRestTemplate restTemplate; static { /* NOTE: RestTemplate makes use of the HttpUrlConnection class, which has the &#39;Origin&#39; header as one of the restricted headers. The following will make the HttpUrlConnection send the &#39;Origin&#39; header. */ System.setProperty(&quot;sun.net.http.allowRestrictedHeaders&quot;, &quot;true&quot;); } @ValueSource(strings = {ORIGIN}) @ParameterizedTest(name = &quot;should contain the allowed origin in the response headers when using origin {0}&quot;) void shouldContainTheAllowedOriginInTheResponseHeaders(final String origin) { /* Given */ final HttpEntity&lt;LinkedMultiValueMap&lt;String, Object&gt;&gt; entity = createEntityWithOrigin(origin); /* When */ final ResponseEntity&lt;String&gt; response = sendRequest(entity); /* Then */ final HttpHeaders headers = response.getHeaders(); assertThat(headers.getAccessControlAllowOrigin()) .describedAs(&quot;The Access-Control-Allow-Origin header should be set&quot;) .isEqualTo(origin); } @Test @DisplayName(&quot;should not contain the allowed origin in the response headers as the origin is unknown&quot;) void shouldNotContainTheAllowedOriginInTheResponseHeadersAsTheOriginIsUnknown() { /* Given */ final String origin = &quot;https://somewhere.com&quot;; final HttpEntity&lt;LinkedMultiValueMap&lt;String, Object&gt;&gt; entity = createEntityWithOrigin(origin); /* When */ final ResponseEntity&lt;String&gt; response = sendRequest(entity); /* Then */ final HttpHeaders headers = response.getHeaders(); assertThat(headers.getAccessControlAllowOrigin()) .describedAs(&quot;The Access-Control-Allow-Origin header should not be set&quot;) .isNull(); } @Test @DisplayName(&quot;should not contain the allowed origin in the response headers if the origin is missing in request&quot;) void shouldNotContainTheAllowedOriginInTheResponseHeadersIfTheOriginIsMissingInRequest() { /* Given */ final HttpEntity&lt;LinkedMultiValueMap&lt;String, Object&gt;&gt; entity = createEntityWithoutOrigin(); /* When */ final ResponseEntity&lt;String&gt; response = sendRequest(entity); /* Then */ final HttpHeaders headers = response.getHeaders(); assertThat(headers.getAccessControlAllowOrigin()) .describedAs(&quot;The Access-Control-Allow-Origin header should not be set&quot;) .isNull(); } private ResponseEntity&lt;String&gt; sendRequest(final HttpEntity&lt;LinkedMultiValueMap&lt;String, Object&gt;&gt; entity) { requireNonNull(entity); return restTemplate.exchange(&quot;/quickhack/name&quot;, HttpMethod.POST, entity, String.class); } private HttpEntity&lt;LinkedMultiValueMap&lt;String, Object&gt;&gt; createEntityWithOrigin(final String origin) { requireNonNull(origin); final LinkedMultiValueMap&lt;String, Object&gt; body = createBody(); final HttpHeaders headers = new HttpHeaders(); headers.setOrigin(origin); return new HttpEntity&lt;&gt;(body, headers); } private HttpEntity&lt;LinkedMultiValueMap&lt;String, Object&gt;&gt; createEntityWithoutOrigin() { final LinkedMultiValueMap&lt;String, Object&gt; body = createBody(); final HttpHeaders headers = new HttpHeaders(); return new HttpEntity&lt;&gt;(body, headers); } private LinkedMultiValueMap&lt;String, Object&gt; createBody() { final LinkedMultiValueMap&lt;String, Object&gt; body = new LinkedMultiValueMap&lt;&gt;(); body.add(&quot;name&quot;, &quot;Quickhack&quot;); return body; } } . File: build.gradle . plugins { id &#39;java&#39; id &#39;org.springframework.boot&#39; version &#39;2.5.2&#39; id &#39;io.spring.dependency-management&#39; version &#39;1.0.11.RELEASE&#39; } java { toolchain { languageVersion = JavaLanguageVersion.of(16) } } repositories { mavenCentral() } dependencies { implementation &#39;org.springframework.boot:spring-boot-starter-web&#39; testImplementation &#39;org.springframework.boot:spring-boot-starter-test&#39; } test { useJUnitPlatform() } . Commands . Run tests . $ ./gradlew check . | Run application . $ ./gradlew bootRun . | Make CURl request . $ curl -v -X &quot;POST&quot; &quot;http://localhost:8080/quickhack/name?name=Quickhacks&quot; -H &quot;Origin: http://localhost:3000&quot; . | . Versions . Java . $ java -version openjdk 16 2021-03-16 OpenJDK Runtime Environment AdoptOpenJDK (build 16+36) OpenJDK 64-Bit Server VM AdoptOpenJDK (build 16+36, mixed mode, sharing) . | Gradle . $ ./gradlew --version Gradle 7.0 Build time: 2021-04-09 22:27:31 UTC Revision: d5661e3f0e07a8caff705f1badf79fb5df8022c4 Kotlin: 1.4.31 Groovy: 3.0.7 Ant: Apache Ant(TM) version 1.10.9 compiled on September 27 2020 JVM: 11.0.10 (AdoptOpenJDK 11.0.10+9) OS: Mac OS X 10.16 x86_64 . | .",
     "url": "https://albertattard.github.io/quickhacks/docs/spring/web/cross-origin-request-blocked/",
     "relUrl": "/docs/spring/web/cross-origin-request-blocked/"
   }
@@ -122,7 +122,7 @@
   }
   ,"21": {
     "title": "Gradle Wrapper",
-    "content": "Gradle Wrapper . References . https://www.youtube.com/watch?v=zAR3Ahr8VnA | . Blank Projects . A blank project containing just the gradle wrapper. . SSH . $ git clone git@github.com:albertattard/blank-gradle-project.git . | HTTPS . $ git clone https://github.com/albertattard/blank-gradle-project.git . | . Version . $ ./gradlew --version . Set Version . You can update, or downgrade, Gradle Wrapper version used . $ ./gradlew wrapper --gradle-version 7.0 . It is recommended to set the SHA256 signature if the Gradle Wrapper to mitigate against man in the middle attacks, and verify that the correct version of Gradle Wrapper is used. . $ ./gradlew wrapper --gradle-distribution-sha256-sum=eb8b89184261025b0430f5b2233701ff1377f96da1ef5e278af6ae8bac5cc305 . A full list of SHA256 signatures is found here. . Kindly note that the checksum verification is only performed when the Gradle Wrapper distribution hasn’t been downloaded yet. The Gradle Wrapper distribution is not verified if this was already downloaded. The wrapper can be deleted as shown next. . $ rm -rf ~/.gradle/wrapper/dists/gradle-7.0-bin . It is also good to verify the Gradle Wrapper JAR file as this is an important part of the build. GitHub provides an action for that already. .",
+    "content": "Gradle Wrapper . References . https://www.youtube.com/watch?v=zAR3Ahr8VnA | . Blank Projects . A blank project containing just the gradle wrapper. . SSH . $ git clone git@github.com:albertattard/blank-gradle-project.git . | HTTPS . $ git clone https://github.com/albertattard/blank-gradle-project.git . | . Version . $ ./gradlew --version . Set Version . You can update, or downgrade, Gradle Wrapper version used. . $ ./gradlew wrapper --gradle-version 7.1.1 . A list of Gradle releases can be found here. . It is recommended to set the SHA256 signature if the Gradle Wrapper to mitigate against man in the middle attacks, and verify that the correct version of Gradle Wrapper is used. . $ ./gradlew wrapper --gradle-distribution-sha256-sum=bf8b869948901d422e9bb7d1fa61da6a6e19411baa7ad6ee929073df85d6365d . A full list of SHA256 signatures is found here. . Kindly note that the checksum verification is only performed when the Gradle Wrapper distribution hasn’t been downloaded yet. The Gradle Wrapper distribution is not verified if this was already downloaded. The wrapper can be deleted as shown next. . $ rm -rf ~/.gradle/wrapper/dists/gradle-7.1.1-bin . It is also good to verify the Gradle Wrapper JAR file as this is an important part of the build. GitHub provides an action for that already. .",
     "url": "https://albertattard.github.io/quickhacks/docs/gradle/gradlew/",
     "relUrl": "/docs/gradle/gradlew/"
   }
@@ -151,34 +151,34 @@
     "relUrl": "/docs/git/ignore-uncommitted-changes-to-file/"
   }
   ,"26": {
-    "title": "Java 11",
-    "content": "Java 11 . A set of Java 11 quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/java/java-11/",
-    "relUrl": "/docs/java/java-11/"
+    "title": "AWS",
+    "content": "AWS .",
+    "url": "https://albertattard.github.io/quickhacks/docs/aws/",
+    "relUrl": "/docs/aws/"
   }
   ,"27": {
-    "title": "Home",
-    "content": "Quickhacks . Many times I had to look for an old example where I did something similar, like create an S3 bucket using Terraform. I have decided to compile a list of code fragments and short examples and called this compilation quickhacks. I got the name from the Cyberpunk 2077 game. As a netrunner you can use quickhacks to defeat your challenges and proceed. I love that game despite its many flaws. . The quickhacks are not meant to be a tutorial nor to provide detailed descriptions. Instead, these are meant to be a quick reference of code fragments. .",
-    "url": "https://albertattard.github.io/quickhacks/",
-    "relUrl": "/"
+    "title": "Docker",
+    "content": "Docker . A set of docker and docker-compose quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/docker/",
+    "relUrl": "/docs/docker/"
   }
   ,"28": {
-    "title": "Docker (Spring)",
-    "content": "Docker and Spring . A set of Docker and Spring quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/spring/docker/",
-    "relUrl": "/docs/spring/docker/"
+    "title": "Gradle",
+    "content": "Gradle . A set of Gradle and Gradle Wrapper quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/gradle/",
+    "relUrl": "/docs/gradle/"
   }
   ,"29": {
-    "title": "Azure",
-    "content": "Azure .",
-    "url": "https://albertattard.github.io/quickhacks/docs/azure/",
-    "relUrl": "/docs/azure/"
+    "title": "Vue",
+    "content": "Vue . A set of Vue quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/vue/",
+    "relUrl": "/docs/vue/"
   }
   ,"30": {
-    "title": "Java",
-    "content": "Java . A set of Java quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/java/",
-    "relUrl": "/docs/java/"
+    "title": "Git",
+    "content": "Git . A set of Git quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/git/",
+    "relUrl": "/docs/git/"
   }
   ,"31": {
     "title": "Apache POI",
@@ -187,82 +187,82 @@
     "relUrl": "/docs/java/apache-poi/"
   }
   ,"32": {
-    "title": "AWS",
-    "content": "AWS .",
-    "url": "https://albertattard.github.io/quickhacks/docs/aws/",
-    "relUrl": "/docs/aws/"
-  }
-  ,"33": {
     "title": "CLI (AWS)",
     "content": "CLI . A set of AWS CLI quickhacks. .",
     "url": "https://albertattard.github.io/quickhacks/docs/aws/cli/",
     "relUrl": "/docs/aws/cli/"
   }
+  ,"33": {
+    "title": "Java 11",
+    "content": "Java 11 . A set of Java 11 quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/java/java-11/",
+    "relUrl": "/docs/java/java-11/"
+  }
   ,"34": {
-    "title": "Git",
-    "content": "Git . A set of Git quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/git/",
-    "relUrl": "/docs/git/"
+    "title": "Java",
+    "content": "Java . A set of Java quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/java/",
+    "relUrl": "/docs/java/"
   }
   ,"35": {
-    "title": "Web",
-    "content": "Spring Web . A set of Spring Web quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/spring/web/",
-    "relUrl": "/docs/spring/web/"
+    "title": "Azure",
+    "content": "Azure .",
+    "url": "https://albertattard.github.io/quickhacks/docs/azure/",
+    "relUrl": "/docs/azure/"
   }
   ,"36": {
-    "title": "Spring",
-    "content": "Spring . A set of Spring quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/spring/",
-    "relUrl": "/docs/spring/"
-  }
-  ,"37": {
     "title": "Micronaut (Azure)",
     "content": "Micronaut . A set of Micronaut quickhacks. .",
     "url": "https://albertattard.github.io/quickhacks/docs/azure/micronaut/",
     "relUrl": "/docs/azure/micronaut/"
   }
+  ,"37": {
+    "title": "Docker (Spring)",
+    "content": "Docker and Spring . A set of Docker and Spring quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/spring/docker/",
+    "relUrl": "/docs/spring/docker/"
+  }
   ,"38": {
-    "title": "Vue",
-    "content": "Vue . A set of Vue quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/vue/",
-    "relUrl": "/docs/vue/"
-  }
-  ,"39": {
-    "title": "Testing (Vue)",
-    "content": "Testing (Vue) .",
-    "url": "https://albertattard.github.io/quickhacks/docs/vue/testing/",
-    "relUrl": "/docs/vue/testing/"
-  }
-  ,"40": {
-    "title": "Terraform (AWS)",
-    "content": "Terraform . A set of AWS and Terraform quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/aws/terraform/",
-    "relUrl": "/docs/aws/terraform/"
-  }
-  ,"41": {
     "title": "Terraform (Azure)",
     "content": "Terraform . A set of Azure and Terraform quickhacks. .",
     "url": "https://albertattard.github.io/quickhacks/docs/azure/terraform/",
     "relUrl": "/docs/azure/terraform/"
   }
-  ,"42": {
-    "title": "End-to-End Testing",
-    "content": "End-to-End Testing . A set of End-to-End testing quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/testing/end-to-end/",
-    "relUrl": "/docs/testing/end-to-end/"
+  ,"39": {
+    "title": "CLI (Azure)",
+    "content": "CLI . A set of Azure CLI quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/azure/cli/",
+    "relUrl": "/docs/azure/cli/"
   }
-  ,"43": {
-    "title": "Docker",
-    "content": "Docker . A set of docker and docker-compose quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/docker/",
-    "relUrl": "/docs/docker/"
-  }
-  ,"44": {
+  ,"40": {
     "title": "Unsorted",
     "content": "Unsorted . These items may move elsewhere. .",
     "url": "https://albertattard.github.io/quickhacks/docs/unsorted/",
     "relUrl": "/docs/unsorted/"
+  }
+  ,"41": {
+    "title": "Web",
+    "content": "Spring Web . A set of Spring Web quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/spring/web/",
+    "relUrl": "/docs/spring/web/"
+  }
+  ,"42": {
+    "title": "Spring",
+    "content": "Spring . A set of Spring quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/spring/",
+    "relUrl": "/docs/spring/"
+  }
+  ,"43": {
+    "title": "Home",
+    "content": "Quickhacks . Many times I had to look for an old example where I did something similar, like create an S3 bucket using Terraform. I have decided to compile a list of code fragments and short examples and called this compilation quickhacks. I got the name from the Cyberpunk 2077 game. As a netrunner you can use quickhacks to defeat your challenges and proceed. I love that game despite its many flaws. . The quickhacks are not meant to be a tutorial nor to provide detailed descriptions. Instead, these are meant to be a quick reference of code fragments. .",
+    "url": "https://albertattard.github.io/quickhacks/",
+    "relUrl": "/"
+  }
+  ,"44": {
+    "title": "End-to-End Testing",
+    "content": "End-to-End Testing . A set of End-to-End testing quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/testing/end-to-end/",
+    "relUrl": "/docs/testing/end-to-end/"
   }
   ,"45": {
     "title": "Testing",
@@ -271,16 +271,16 @@
     "relUrl": "/docs/testing/"
   }
   ,"46": {
-    "title": "CLI (Azure)",
-    "content": "CLI . A set of Azure CLI quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/azure/cli/",
-    "relUrl": "/docs/azure/cli/"
+    "title": "Testing (Vue)",
+    "content": "Testing (Vue) .",
+    "url": "https://albertattard.github.io/quickhacks/docs/vue/testing/",
+    "relUrl": "/docs/vue/testing/"
   }
   ,"47": {
-    "title": "Gradle",
-    "content": "Gradle . A set of Gradle and Gradle Wrapper quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/gradle/",
-    "relUrl": "/docs/gradle/"
+    "title": "Terraform (AWS)",
+    "content": "Terraform . A set of AWS and Terraform quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/aws/terraform/",
+    "relUrl": "/docs/aws/terraform/"
   }
   ,"48": {
     "title": "Install Azure CLI",
@@ -469,36 +469,42 @@
     "relUrl": "/docs/gradle/spotless/"
   }
   ,"79": {
+    "title": "Spring Security CORS",
+    "content": "Spring Security CORS . {% include custom/pending.html details=”I am still working on this one” %} .",
+    "url": "https://albertattard.github.io/quickhacks/docs/spring/web/spring-security-cors/",
+    "relUrl": "/docs/spring/web/spring-security-cors/"
+  }
+  ,"80": {
     "title": "SSH Authentication",
     "content": "SSH Authentication . Setup . Create SSH . Pick the key type supported by your remote repository. Not all repositories support all types of keys. Put your email address as a comment to the key, as recommended by GitHub . . Use the Edwards-curve Digital Signature Algorithm (Ed25519 is the EdDSA signature scheme using SHA-512 (SHA-2) and Curve25519). This is only supported by newer repositories. . $ ssh-keygen -t ed25519 -C &quot;albertattard@gmail.com&quot; . | Use the older RSA Algorithm, supported by most repositories . $ ssh-keygen -t rsa -C &quot;albertattard@gmail.com&quot; . | . Do not use one SSH key for all repositories. Instead, create one for every environment, such as . Personal things | Profession/Work development environment | Profession/Work production environment | . You can do that by creating as many SSH key-pairs as needed. . Secure your private key with a password. . Following is an example . $ ssh-keygen -t rsa -C &quot;albertattard@gmail.com&quot; Generating public/private rsa key pair. Enter file in which to save the key (/Users/albertattard/.ssh/id_rsa): /Users/albertattard/.ssh/id_rsa_dev Enter passphrase (empty for no passphrase): Enter same passphrase again: Your identification has been saved in /Users/albertattard/.ssh/id_rsa_dev. Your public key has been saved in /Users/albertattard/.ssh/id_rsa_dev.pub. The key fingerprint is: SHA256:Fvh13Ra2aOJuehYpEu2sec7RzQzc5MckQMe2ZuL1nqw albertattard@gmail.com The key&#39;s randomart image is: +[RSA 3072]-+ | .o.. o | | . o+o.o| | . o ..o=ooo| | o +oo*=+. | | S .+*o.o | | o +o+= .. | | +..+.+o .| | o..+o + | | o+o E. | +-[SHA256]--+ . | Upload the public key to the remote repository. . Copy Public Key to the clipboard . $ pbcopy &lt; ~/.ssh/id_rsa_dev.pub . Add the SSH Key to the repo . | Configure SSH . Edit the ~/.ssh/config file and add an entry so that GIT can use SSH to authenticate . $ vi ~/.ssh/config . Add the following . Host dev-project AddKeysToAgent yes UseKeychain yes User git Hostname github.com IdentityFile ~/.ssh/id_rsa_dev IdentitiesOnly yes . Using the above configuration, the path dev-project:albertattard/quickhacks-source.git is equivalent to the following: git@github.com:albertattard/quickhacks-source.git, and the private key file ~/.ssh/id_rsa_dev. . | Access the repository . $ git clone dev-project:albertattard/quickhacks-source.git . | Versions . Git . $ git --version git version 2.30.1 (Apple Git-130) . | SSH . $ ssh -V OpenSSH_8.1p1, LibreSSL 2.7.3 . |",
     "url": "https://albertattard.github.io/quickhacks/docs/git/ssh-authentication/",
     "relUrl": "/docs/git/ssh-authentication/"
   }
-  ,"80": {
+  ,"81": {
     "title": "Stroop effect",
     "content": "Stroop effect . References . https://en.wikipedia.org/wiki/Stroop_effect | . Stroop effect . In psychology, the Stroop effect is the delay in reaction time between congruent and incongruent stimuli. . The effect has been used to create a psychological test (the Stroop test) that is widely used in clinical practice and investigation. . A basic task that demonstrates this effect occurs when there is a mismatch between the name of a color (e.g., “blue”, “green”, or “red”) and the color it is printed on (i.e., the word “red” printed in blue ink instead of red ink). When asked to name the color of the word it takes longer and is more prone to errors when the color of the ink does not match the name of the color. .",
     "url": "https://albertattard.github.io/quickhacks/docs/unsorted/stroop-effect/",
     "relUrl": "/docs/unsorted/stroop-effect/"
   }
-  ,"81": {
+  ,"82": {
     "title": "Structurizr DSL",
     "content": "Structurizr DSL . References . https://github.com/structurizr/dsl | . Structurizr DSL . Structurizr DSL is a way to create Structurizr software architecture models based upon the C4 model using a textual domain specific language (DSL). The Structurizr DSL has appeared on the ThoughtWorks Tech Radar - Techniques - Diagrams as code. .",
     "url": "https://albertattard.github.io/quickhacks/docs/unsorted/Structurizr%20DSL/",
     "relUrl": "/docs/unsorted/Structurizr DSL/"
   }
-  ,"82": {
+  ,"83": {
     "title": "Task Dependencies",
     "content": "Task Dependencies . References . https://plugins.gradle.org/plugin/org.barfuin.gradle.taskinfo | https://youtu.be/Vxfk7OsEekA?t=105 | . File: build.gradle . {% highlight gradle %} {% raw_include quickhacks/gradle/task-dependencies/build.gradle %} {% endhighlight %} . Display the Task Dependencies . $ ./gradlew tiTree build &gt; Task :tiTree :build (org.gradle.api.DefaultTask) + :assemble (org.gradle.api.DefaultTask) | ` :jar (org.gradle.api.tasks.bundling.Jar) | ` :classes (org.gradle.api.DefaultTask) | + :compileJava (org.gradle.api.tasks.compile.JavaCompile) | ` :processResources (org.gradle.language.jvm.tasks.ProcessResources) ` :check (org.gradle.api.DefaultTask) ` :test (org.gradle.api.tasks.testing.Test) + :classes (org.gradle.api.DefaultTask) | + :compileJava (org.gradle.api.tasks.compile.JavaCompile) | ` :processResources (org.gradle.language.jvm.tasks.ProcessResources) ` :testClasses (org.gradle.api.DefaultTask) + :compileTestJava (org.gradle.api.tasks.compile.JavaCompile) | ` :classes (org.gradle.api.DefaultTask) | + :compileJava (org.gradle.api.tasks.compile.JavaCompile) | ` :processResources (org.gradle.language.jvm.tasks.ProcessResources) ` :processTestResources (org.gradle.language.jvm.tasks.ProcessResources) BUILD SUCCESSFUL in 768ms 1 actionable task: 1 executed . Versions . Gradle . $ ./gradlew --version Gradle 7.0 Build time: 2021-04-09 22:27:31 UTC Revision: d5661e3f0e07a8caff705f1badf79fb5df8022c4 Kotlin: 1.4.31 Groovy: 3.0.7 Ant: Apache Ant(TM) version 1.10.9 compiled on September 27 2020 JVM: 16 (AdoptOpenJDK 16+36) OS: Mac OS X 10.16 x86_64 . |",
     "url": "https://albertattard.github.io/quickhacks/docs/gradle/task-dependencies/",
     "relUrl": "/docs/gradle/task-dependencies/"
   }
-  ,"83": {
+  ,"84": {
     "title": "Tricorder",
     "content": "Tricorder . References . https://research.google/pubs/pub43322/ | . Tricorder . Static analysis tools help developers find bugs, improve code readability, and ensure consistent style across a project. However, these tools can be difficult to smoothly integrate with each other and into the developer workflow, particularly when scaling to large codebases. We present Tricorder, a program analysis platform aimed at building a data-driven ecosystem around program analysis. We present a set of guiding principles for our program analysis tools and a scalable architecture for an analysis platform implementing these principles. We include an empirical, in-situ evaluation of the tool as it is used by developers across Google that shows the usefulness and impact of the platform. .",
     "url": "https://albertattard.github.io/quickhacks/docs/unsorted/tricorder/",
     "relUrl": "/docs/unsorted/tricorder/"
   }
-  ,"84": {
+  ,"85": {
     "title": "VM (Publicly Accessible)",
     "content": "Virtual Machine (Publicly Accessible) . {% include custom/pending.html details=”I am still working on this one” %} . Terraform . File: terraform.tf . {% highlight terraform %} {% raw_include quickhacks/azure/terraform/vm-publicly-accessible/terraform.tf %} {% endhighlight %} . File: providers.tf . {% highlight terraform %} {% raw_include quickhacks/azure/terraform/vm-publicly-accessible/providers.tf %} {% endhighlight %} . File: main.tf . {% highlight terraform %} {% raw_include quickhacks/azure/terraform/vm-publicly-accessible/main.tf %} {% endhighlight %} . File: output.tf . {% highlight terraform %} {% raw_include quickhacks/azure/terraform/vm-publicly-accessible/output.tf %} {% endhighlight %} . SSH to VM . Connect to the VM instance using the private key . $ . Versions . Terraform . $ terraform --version Terraform v0.15.0 . | SSH . $ ssh -V OpenSSH_8.1p1, LibreSSL 2.7.3 . |",
     "url": "https://albertattard.github.io/quickhacks/docs/azure/terraform/vm-publicly-accessible/",
