@@ -3,6 +3,7 @@
 <span class="kn">import</span> <span class="nn">static</span> <span class="n">org</span><span class="o">.</span><span class="na">assertj</span><span class="o">.</span><span class="na">core</span><span class="o">.</span><span class="na">api</span><span class="o">.</span><span class="na">Assertions</span><span class="o">.</span><span class="na">assertThat</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">static</span> <span class="n">org</span><span class="o">.</span><span class="na">assertj</span><span class="o">.</span><span class="na">core</span><span class="o">.</span><span class="na">api</span><span class="o">.</span><span class="na">Assertions</span><span class="o">.</span><span class="na">fail</span><span class="o">;</span>
 
+<span class="kn">import</span> <span class="nn">java.util.Locale</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.util.Optional</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.util.function.BooleanSupplier</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.util.function.Supplier</span><span class="o">;</span>
@@ -75,6 +76,21 @@
                 <span class="o">.</span><span class="na">isNotPresent</span><span class="o">();</span>
     <span class="o">}</span>
 
+    <span class="nd">@Test</span>
+    <span class="nd">@DisplayName</span><span class="o">(</span><span class="s">"should return map the first if option that evaluates to true"</span><span class="o">)</span>
+    <span class="kt">void</span> <span class="nf">shouldReturnMapTheFirstIfOptionThatEvaluatesToTrue</span><span class="o">()</span> <span class="o">{</span>
+        <span class="cm">/* Given/When */</span>
+        <span class="kd">final</span> <span class="nc">Optional</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">result</span> <span class="o">=</span> <span class="nc">FunctionalIfElseLadder</span>
+                <span class="o">.</span><span class="na">ifTrue</span><span class="o">(</span><span class="n">alwaysFalse</span><span class="o">(),</span> <span class="n">failIfInvoked</span><span class="o">())</span>
+                <span class="o">.</span><span class="na">elseIf</span><span class="o">(</span><span class="n">alwaysTrue</span><span class="o">(),</span> <span class="o">()</span> <span class="o">-&gt;</span> <span class="no">EXPECTED_RESULT</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">s</span> <span class="o">-&gt;</span> <span class="n">s</span><span class="o">.</span><span class="na">toUpperCase</span><span class="o">(</span><span class="nc">Locale</span><span class="o">.</span><span class="na">ROOT</span><span class="o">));</span>
+
+        <span class="cm">/* Then */</span>
+        <span class="n">assertThat</span><span class="o">(</span><span class="n">result</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">describedAs</span><span class="o">(</span><span class="s">"An empty optional is returned"</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">isEqualTo</span><span class="o">(</span><span class="nc">Optional</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="no">EXPECTED_RESULT</span><span class="o">.</span><span class="na">toUpperCase</span><span class="o">(</span><span class="nc">Locale</span><span class="o">.</span><span class="na">ROOT</span><span class="o">)));</span>
+    <span class="o">}</span>
+
     <span class="kd">private</span> <span class="kd">static</span> <span class="nc">BooleanSupplier</span> <span class="nf">alwaysTrue</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="o">()</span> <span class="o">-&gt;</span> <span class="kc">true</span><span class="o">;</span>
     <span class="o">}</span>
@@ -97,6 +113,7 @@
 <span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.util.Optional</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.util.function.BooleanSupplier</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.function.Function</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.util.function.Supplier</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">FunctionalIfElseLadder</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span>
@@ -129,6 +146,13 @@
 
         <span class="k">return</span> <span class="nf">asOptional</span><span class="o">()</span>
                 <span class="o">.</span><span class="na">orElseGet</span><span class="o">(</span><span class="n">supplier</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="o">&lt;</span><span class="no">R</span><span class="o">&gt;</span> <span class="nc">Optional</span><span class="o">&lt;</span><span class="no">R</span><span class="o">&gt;</span> <span class="nf">map</span><span class="o">(</span><span class="kd">final</span> <span class="nc">Function</span><span class="o">&lt;</span><span class="no">T</span><span class="o">,</span> <span class="no">R</span><span class="o">&gt;</span> <span class="n">mapper</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">requireNonNull</span><span class="o">(</span><span class="n">mapper</span><span class="o">);</span>
+
+        <span class="k">return</span> <span class="nf">asOptional</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">map</span><span class="o">(</span><span class="n">mapper</span><span class="o">);</span>
     <span class="o">}</span>
 
     <span class="kd">public</span> <span class="nc">Optional</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="nf">asOptional</span><span class="o">()</span> <span class="o">{</span>
