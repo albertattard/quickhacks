@@ -37,16 +37,16 @@
     "relUrl": "/docs/git/change-last-commit-message/"
   }
   ,"7": {
-    "title": "Terraform Commands",
-    "content": "Terraform Commands . Initialise terraform . $ AWS_PROFILE=&quot;quickhacks&quot; terraform init . Or, use the -chdir argument to run the command from a different directory . $ AWS_PROFILE=&quot;quickhacks&quot; terraform -chdir=terraform init . | Format code (recursive) . $ terraform fmt -recursive . Or, use the -chdir argument to run the command from a different directory . $ terraform -chdir=terraform fmt -recursive . | Plan the changes . Without saving the plan. . $ AWS_PROFILE=&quot;quickhacks&quot; terraform plan . Saving the plan so that it can be executed later on. . $ AWS_PROFILE=&quot;quickhacks&quot; terraform plan -out quickhacks.plan . | Apply the changes . $ AWS_PROFILE=&quot;quickhacks&quot; terraform apply . Or, use the -chdir argument to run the command from a different directory . $ AWS_PROFILE=&quot;quickhacks&quot; terraform -chdir=terraform apply . | Output values . $ AWS_PROFILE=&quot;quickhacks&quot; terraform output . Or, use the -chdir argument to run the command from a different directory . $ AWS_PROFILE=&quot;quickhacks&quot; terraform -chdir=terraform output . Change the format to JSON . $ AWS_PROFILE=&quot;quickhacks&quot; terraform output -json . | Destroy the resources . $ AWS_PROFILE=&quot;quickhacks&quot; terraform destroy . Or, use the -chdir argument to run the command from a different directory . $ AWS_PROFILE=&quot;quickhacks&quot; terraform -chdir=terraform destroy . | Versions . Terraform . $ terraform --version Terraform v0.15.0 . |",
-    "url": "https://albertattard.github.io/quickhacks/docs/aws/terraform/commands/",
-    "relUrl": "/docs/aws/terraform/commands/"
-  }
-  ,"8": {
     "title": "CLI Commands",
     "content": "Azure CLI Commands . References . https://docs.microsoft.com/en-us/cli/azure/get-started-with-azure-cli | . Commands . Version . $ az --version azure-cli 2.22.1 core 2.22.1 telemetry 1.0.6 Python location &#39;/usr/local/Cellar/azure-cli/2.22.1/libexec/bin/python&#39; Extensions directory &#39;/Users/albertattard/.azure/cliextensions&#39; Python (Darwin) 3.8.9 (default, Apr 3 2021, 01:51:00) [Clang 12.0.0 (clang-1200.0.32.29)] Legal docs and information: aka.ms/AzureCliLegal Your CLI is up-to-date. Please let us know how we are doing: https://aka.ms/azureclihats and let us know if you&#39;re interested in trying out our newest features: https://aka.ms/CLIUXstudy . | Login . $ az login . | Versions . azure CLI . $ az --version azure-cli 2.22.1 core 2.22.1 telemetry 1.0.6 Python location &#39;/usr/local/Cellar/azure-cli/2.22.1/libexec/bin/python&#39; Extensions directory &#39;/Users/albertattard/.azure/cliextensions&#39; Python (Darwin) 3.8.9 (default, Apr 3 2021, 01:51:00) [Clang 12.0.0 (clang-1200.0.32.29)] Legal docs and information: aka.ms/AzureCliLegal Your CLI is up-to-date. Please let us know how we are doing: https://aka.ms/azureclihats and let us know if you&#39;re interested in trying out our newest features: https://aka.ms/CLIUXstudy . |",
     "url": "https://albertattard.github.io/quickhacks/docs/azure/cli/commands/",
     "relUrl": "/docs/azure/cli/commands/"
+  }
+  ,"8": {
+    "title": "Terraform Commands",
+    "content": "Terraform Commands . Initialise terraform . $ AWS_PROFILE=&quot;quickhacks&quot; terraform init . Or, use the -chdir argument to run the command from a different directory . $ AWS_PROFILE=&quot;quickhacks&quot; terraform -chdir=terraform init . | Format code (recursive) . $ terraform fmt -recursive . Or, use the -chdir argument to run the command from a different directory . $ terraform -chdir=terraform fmt -recursive . | Plan the changes . Without saving the plan. . $ AWS_PROFILE=&quot;quickhacks&quot; terraform plan . Saving the plan so that it can be executed later on. . $ AWS_PROFILE=&quot;quickhacks&quot; terraform plan -out quickhacks.plan . | Apply the changes . $ AWS_PROFILE=&quot;quickhacks&quot; terraform apply . Or, use the -chdir argument to run the command from a different directory . $ AWS_PROFILE=&quot;quickhacks&quot; terraform -chdir=terraform apply . | Output values . $ AWS_PROFILE=&quot;quickhacks&quot; terraform output . Or, use the -chdir argument to run the command from a different directory . $ AWS_PROFILE=&quot;quickhacks&quot; terraform -chdir=terraform output . Change the format to JSON . $ AWS_PROFILE=&quot;quickhacks&quot; terraform output -json . | Destroy the resources . $ AWS_PROFILE=&quot;quickhacks&quot; terraform destroy . Or, use the -chdir argument to run the command from a different directory . $ AWS_PROFILE=&quot;quickhacks&quot; terraform -chdir=terraform destroy . | Versions . Terraform . $ terraform --version Terraform v0.15.0 . |",
+    "url": "https://albertattard.github.io/quickhacks/docs/aws/terraform/commands/",
+    "relUrl": "/docs/aws/terraform/commands/"
   }
   ,"9": {
     "title": "Components and Nested Components",
@@ -122,7 +122,7 @@
   }
   ,"21": {
     "title": "Functional If-Else Ladder",
-    "content": "Functional If-Else Ladder . File: src/test/java/quickhacks/FunctionalIfElseLadderTest.java . package quickhacks; import static org.assertj.core.api.Assertions.assertThat; import static org.assertj.core.api.Assertions.fail; import java.util.Locale; import java.util.Optional; import java.util.function.BooleanSupplier; import java.util.function.Supplier; import org.junit.jupiter.api.DisplayName; import org.junit.jupiter.api.Test; class FunctionalIfElseLadderTest { private static final String EXPECTED_RESULT = &quot;It should be me&quot;; @Test @DisplayName(&quot;should evaluate the first if option and ignoring the others&quot;) void shouldEvaluateTheFirstIfOptionAndIgnoringTheOthers() { /* Given/When */ final String result = FunctionalIfElseLadder .ifTrue(alwaysTrue(), () -&gt; EXPECTED_RESULT) .elseIf(alwaysTrue(), failIfInvoked()) .orElse(failIfInvoked()); /* Then */ assertThat(result) .describedAs(&quot;The first if option should be executed&quot;) .isEqualTo(EXPECTED_RESULT); } @Test @DisplayName(&quot;should evaluate the first if option that evaluates to true and ignoring the others&quot;) void shouldEvaluateTheFirstIfOptionThatEvaluatesToTrueAndIgnoringTheOthers() { /* Given/When */ final String result = FunctionalIfElseLadder .ifTrue(alwaysFalse(), failIfInvoked()) .elseIf(alwaysTrue(), () -&gt; EXPECTED_RESULT) .elseIf(alwaysTrue(), failIfInvoked()) .orElse(failIfInvoked()); /* Then */ assertThat(result) .describedAs(&quot;The second if option should be executed&quot;) .isEqualTo(EXPECTED_RESULT); } @Test @DisplayName(&quot;should evaluate the else option as non of the if options are true&quot;) void shouldEvaluateTheElseOptionAsNonOfTheIfOptionsAreTrue() { /* Given/When */ final String result = FunctionalIfElseLadder .ifTrue(alwaysFalse(), failIfInvoked()) .elseIf(alwaysFalse(), failIfInvoked()) .orElse(() -&gt; EXPECTED_RESULT); /* Then */ assertThat(result) .describedAs(&quot;The else option is executed as non of the if options evaluated to true&quot;) .isEqualTo(EXPECTED_RESULT); } @Test @DisplayName(&quot;should return optional empty if none of the if options evaluates to true&quot;) void shouldReturnOptionalEmptyIfNoneOfTheIfOptionsEvaluatesToTrue() { /* Given/When */ final Optional&lt;String&gt; result = FunctionalIfElseLadder .ifTrue(alwaysFalse(), failIfInvoked()) .elseIf(alwaysFalse(), failIfInvoked()) .asOptional(); /* Then */ assertThat(result) .describedAs(&quot;An empty optional is returned&quot;) .isNotPresent(); } @Test @DisplayName(&quot;should return map the first if option that evaluates to true&quot;) void shouldReturnMapTheFirstIfOptionThatEvaluatesToTrue() { /* Given/When */ final Optional&lt;String&gt; result = FunctionalIfElseLadder .ifTrue(alwaysFalse(), failIfInvoked()) .elseIf(alwaysTrue(), () -&gt; EXPECTED_RESULT) .map(s -&gt; s.toUpperCase(Locale.ROOT)); /* Then */ assertThat(result) .describedAs(&quot;The mapped value is returned&quot;) .isEqualTo(Optional.of(EXPECTED_RESULT.toUpperCase(Locale.ROOT))); } private static BooleanSupplier alwaysTrue() { return () -&gt; true; } private static BooleanSupplier alwaysFalse() { return () -&gt; false; } private static Supplier&lt;String&gt; failIfInvoked() { return () -&gt; { fail(&quot;This should not be invoked&quot;); return &quot;This should not be invoked&quot;; }; } } . File: src/main/java/quickhacks/FunctionalIfElseLadder.java . package quickhacks; import static java.util.Objects.requireNonNull; import java.util.ArrayList; import java.util.List; import java.util.Optional; import java.util.function.BooleanSupplier; import java.util.function.Function; import java.util.function.Supplier; public class FunctionalIfElseLadder&lt;T&gt; { private final List&lt;PredicateSupplierPair&lt;T&gt;&gt; options; public static &lt;E&gt; FunctionalIfElseLadder&lt;E&gt; ifTrue(final BooleanSupplier predicate, final Supplier&lt;E&gt; supplier) { requireNonNull(predicate); requireNonNull(supplier); return new FunctionalIfElseLadder&lt;&gt;(List.of(PredicateSupplierPair.of(predicate, supplier))); } public FunctionalIfElseLadder&lt;T&gt; elseIf(final BooleanSupplier predicate, final Supplier&lt;T&gt; supplier) { requireNonNull(predicate); requireNonNull(supplier); final List&lt;PredicateSupplierPair&lt;T&gt;&gt; list = new ArrayList&lt;&gt;(options); list.add(PredicateSupplierPair.of(predicate, supplier)); return new FunctionalIfElseLadder&lt;&gt;(List.copyOf(list)); } private FunctionalIfElseLadder(final List&lt;PredicateSupplierPair&lt;T&gt;&gt; options) { this.options = options; } public T orElse(final Supplier&lt;T&gt; supplier) { requireNonNull(supplier); return asOptional() .orElseGet(supplier); } public &lt;R&gt; Optional&lt;R&gt; map(final Function&lt;T, R&gt; mapper) { requireNonNull(mapper); return asOptional() .map(mapper); } public Optional&lt;T&gt; asOptional() { return options.stream() .filter(PredicateSupplierPair::isTrue) .findFirst() .map(PredicateSupplierPair::value); } private static class PredicateSupplierPair&lt;T&gt; { private final BooleanSupplier predicate; private final Supplier&lt;T&gt; supplier; public static &lt;E&gt; PredicateSupplierPair&lt;E&gt; of(final BooleanSupplier predicate, final Supplier&lt;E&gt; supplier) { requireNonNull(predicate); requireNonNull(supplier); return new PredicateSupplierPair&lt;&gt;(predicate, supplier); } private PredicateSupplierPair(final BooleanSupplier predicate, final Supplier&lt;T&gt; supplier) { this.predicate = predicate; this.supplier = supplier; } public boolean isTrue() { return predicate.getAsBoolean(); } public T value() { return supplier.get(); } } } . File: build.gradle . plugins { id &quot;java&quot; } repositories { mavenCentral() } dependencies { testImplementation &quot;org.assertj:assertj-core:3.20.2&quot; testImplementation &quot;org.junit.jupiter:junit-jupiter:5.8.0-M1&quot; } test { useJUnitPlatform() testLogging { events &quot;failed&quot;, &quot;passed&quot;, &quot;skipped&quot;, &quot;standard_out&quot; exceptionFormat &quot;full&quot; showExceptions true showCauses true showStackTraces true } } . Versions . Java 11 . $ java --version openjdk 11.0.10 2021-01-19 OpenJDK Runtime Environment AdoptOpenJDK (build 11.0.10+9) OpenJDK 64-Bit Server VM AdoptOpenJDK (build 11.0.10+9, mixed mode) . | Gradle . $ ./gradlew --version Gradle 7.1.1 . | .",
+    "content": "Functional If-Else Ladder . File: src/test/java/quickhacks/FunctionalIfElseLadderTest.java . package quickhacks; import static org.assertj.core.api.Assertions.assertThat; import static org.assertj.core.api.Assertions.fail; import java.util.Locale; import java.util.Optional; import java.util.function.BooleanSupplier; import java.util.function.Supplier; import org.junit.jupiter.api.DisplayName; import org.junit.jupiter.api.Test; class FunctionalIfElseLadderTest { private static final String EXPECTED_RESULT = &quot;It should be me&quot;; @Test @DisplayName(&quot;should evaluate the first if option and ignoring the others&quot;) void shouldEvaluateTheFirstIfOptionAndIgnoringTheOthers() { /* Given/When */ final String result = FunctionalIfElseLadder .ifTrue(alwaysTrue(), () -&gt; EXPECTED_RESULT) .elseIf(alwaysTrue(), failIfInvoked()) .orElse(failIfInvoked()); /* Then */ assertThat(result) .describedAs(&quot;The first if option should be executed&quot;) .isEqualTo(EXPECTED_RESULT); } @Test @DisplayName(&quot;should evaluate the first if option that evaluates to true and ignoring the others&quot;) void shouldEvaluateTheFirstIfOptionThatEvaluatesToTrueAndIgnoringTheOthers() { /* Given/When */ final String result = FunctionalIfElseLadder .ifTrue(alwaysFalse(), failIfInvoked()) .elseIf(alwaysTrue(), () -&gt; EXPECTED_RESULT) .elseIf(alwaysTrue(), failIfInvoked()) .orElse(failIfInvoked()); /* Then */ assertThat(result) .describedAs(&quot;The second if option should be executed&quot;) .isEqualTo(EXPECTED_RESULT); } @Test @DisplayName(&quot;should evaluate the else option as non of the if options are true&quot;) void shouldEvaluateTheElseOptionAsNonOfTheIfOptionsAreTrue() { /* Given/When */ final String result = FunctionalIfElseLadder .ifTrue(alwaysFalse(), failIfInvoked()) .elseIf(alwaysFalse(), failIfInvoked()) .orElse(() -&gt; EXPECTED_RESULT); /* Then */ assertThat(result) .describedAs(&quot;The else option is executed as non of the if options evaluated to true&quot;) .isEqualTo(EXPECTED_RESULT); } @Test @DisplayName(&quot;should return optional empty if none of the if options evaluates to true&quot;) void shouldReturnOptionalEmptyIfNoneOfTheIfOptionsEvaluatesToTrue() { /* Given/When */ final Optional&lt;String&gt; result = FunctionalIfElseLadder .ifTrue(alwaysFalse(), failIfInvoked()) .elseIf(alwaysFalse(), failIfInvoked()) .asOptional(); /* Then */ assertThat(result) .describedAs(&quot;An empty optional is returned&quot;) .isNotPresent(); } @Test @DisplayName(&quot;should return map the first if option that evaluates to true&quot;) void shouldReturnMapTheFirstIfOptionThatEvaluatesToTrue() { /* Given/When */ final Optional&lt;String&gt; result = FunctionalIfElseLadder .ifTrue(alwaysFalse(), failIfInvoked()) .elseIf(alwaysTrue(), () -&gt; EXPECTED_RESULT) .map(s -&gt; s.toUpperCase(Locale.ROOT)); /* Then */ assertThat(result) .describedAs(&quot;The mapped value is returned&quot;) .isEqualTo(Optional.of(EXPECTED_RESULT.toUpperCase(Locale.ROOT))); } private static BooleanSupplier alwaysTrue() { return () -&gt; true; } private static BooleanSupplier alwaysFalse() { return () -&gt; false; } private static Supplier&lt;String&gt; failIfInvoked() { return () -&gt; { fail(&quot;This should not be invoked&quot;); return &quot;This should not be invoked&quot;; }; } } . File: src/main/java/quickhacks/FunctionalIfElseLadder.java . package quickhacks; import static java.util.Objects.requireNonNull; import java.util.ArrayList; import java.util.List; import java.util.Optional; import java.util.function.BooleanSupplier; import java.util.function.Function; import java.util.function.Supplier; public class FunctionalIfElseLadder&lt;T&gt; { private final List&lt;PredicateSupplierPair&lt;T&gt;&gt; options; public static &lt;E&gt; FunctionalIfElseLadder&lt;E&gt; ifTrue(final BooleanSupplier predicate, final Supplier&lt;E&gt; supplier) { requireNonNull(predicate); requireNonNull(supplier); return new FunctionalIfElseLadder&lt;&gt;(List.of(PredicateSupplierPair.of(predicate, supplier))); } public FunctionalIfElseLadder&lt;T&gt; elseIf(final BooleanSupplier predicate, final Supplier&lt;T&gt; supplier) { requireNonNull(predicate); requireNonNull(supplier); final List&lt;PredicateSupplierPair&lt;T&gt;&gt; list = new ArrayList&lt;&gt;(options); list.add(PredicateSupplierPair.of(predicate, supplier)); return new FunctionalIfElseLadder&lt;&gt;(List.copyOf(list)); } private FunctionalIfElseLadder(final List&lt;PredicateSupplierPair&lt;T&gt;&gt; options) { this.options = options; } public T orElse(final Supplier&lt;T&gt; supplier) { requireNonNull(supplier); return asOptional() .orElseGet(supplier); } public &lt;R&gt; Optional&lt;R&gt; map(final Function&lt;T, R&gt; mapper) { requireNonNull(mapper); return asOptional() .map(mapper); } public &lt;R&gt; R map(final Function&lt;T, R&gt; mapper, final Supplier&lt;R&gt; supplier) { requireNonNull(mapper); requireNonNull(supplier); return asOptional() .map(mapper) .orElseGet(supplier); } public Optional&lt;T&gt; asOptional() { return options.stream() .filter(PredicateSupplierPair::isTrue) .findFirst() .map(PredicateSupplierPair::value); } private static class PredicateSupplierPair&lt;T&gt; { private final BooleanSupplier predicate; private final Supplier&lt;T&gt; supplier; public static &lt;E&gt; PredicateSupplierPair&lt;E&gt; of(final BooleanSupplier predicate, final Supplier&lt;E&gt; supplier) { requireNonNull(predicate); requireNonNull(supplier); return new PredicateSupplierPair&lt;&gt;(predicate, supplier); } private PredicateSupplierPair(final BooleanSupplier predicate, final Supplier&lt;T&gt; supplier) { this.predicate = predicate; this.supplier = supplier; } public boolean isTrue() { return predicate.getAsBoolean(); } public T value() { return supplier.get(); } } } . File: build.gradle . plugins { id &quot;java&quot; } repositories { mavenCentral() } dependencies { testImplementation &quot;org.assertj:assertj-core:3.20.2&quot; testImplementation &quot;org.junit.jupiter:junit-jupiter:5.8.0-M1&quot; } test { useJUnitPlatform() testLogging { events &quot;failed&quot;, &quot;passed&quot;, &quot;skipped&quot;, &quot;standard_out&quot; exceptionFormat &quot;full&quot; showExceptions true showCauses true showStackTraces true } } . Versions . Java 11 . $ java --version openjdk 11.0.10 2021-01-19 OpenJDK Runtime Environment AdoptOpenJDK (build 11.0.10+9) OpenJDK 64-Bit Server VM AdoptOpenJDK (build 11.0.10+9, mixed mode) . | Gradle . $ ./gradlew --version Gradle 7.1.1 . | .",
     "url": "https://albertattard.github.io/quickhacks/docs/java/functional/functional-if-else-ladder/",
     "relUrl": "/docs/java/functional/functional-if-else-ladder/"
   }
@@ -157,148 +157,148 @@
     "relUrl": "/docs/git/ignore-uncommitted-changes-to-file/"
   }
   ,"27": {
-    "title": "Gradle",
-    "content": "Gradle . A set of Gradle and Gradle Wrapper quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/gradle/",
-    "relUrl": "/docs/gradle/"
-  }
-  ,"28": {
-    "title": "Docker",
-    "content": "Docker . A set of docker and docker-compose quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/docker/",
-    "relUrl": "/docs/docker/"
-  }
-  ,"29": {
-    "title": "Terraform (AWS)",
-    "content": "Terraform . A set of AWS and Terraform quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/aws/terraform/",
-    "relUrl": "/docs/aws/terraform/"
-  }
-  ,"30": {
     "title": "Apache POI",
     "content": "Apache POI . A set of Apache POI, the Java API for Microsoft Documents quickhacks. .",
     "url": "https://albertattard.github.io/quickhacks/docs/java/apache-poi/",
     "relUrl": "/docs/java/apache-poi/"
   }
-  ,"31": {
-    "title": "Git",
-    "content": "Git . A set of Git quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/git/",
-    "relUrl": "/docs/git/"
-  }
-  ,"32": {
-    "title": "Java 11",
-    "content": "Java 11 . A set of Java 11 quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/java/java-11/",
-    "relUrl": "/docs/java/java-11/"
-  }
-  ,"33": {
-    "title": "Functional",
-    "content": "Functional . A set of functional quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/java/functional/",
-    "relUrl": "/docs/java/functional/"
-  }
-  ,"34": {
-    "title": "CLI (AWS)",
-    "content": "CLI . A set of AWS CLI quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/aws/cli/",
-    "relUrl": "/docs/aws/cli/"
-  }
-  ,"35": {
-    "title": "Java",
-    "content": "Java . A set of Java quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/java/",
-    "relUrl": "/docs/java/"
-  }
-  ,"36": {
-    "title": "Vue",
-    "content": "Vue . A set of Vue quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/vue/",
-    "relUrl": "/docs/vue/"
-  }
-  ,"37": {
-    "title": "Docker (Spring)",
-    "content": "Docker and Spring . A set of Docker and Spring quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/spring/docker/",
-    "relUrl": "/docs/spring/docker/"
-  }
-  ,"38": {
-    "title": "Azure",
-    "content": "Azure .",
-    "url": "https://albertattard.github.io/quickhacks/docs/azure/",
-    "relUrl": "/docs/azure/"
-  }
-  ,"39": {
-    "title": "Micronaut (Azure)",
-    "content": "Micronaut . A set of Micronaut quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/azure/micronaut/",
-    "relUrl": "/docs/azure/micronaut/"
-  }
-  ,"40": {
-    "title": "Terraform (Azure)",
-    "content": "Terraform . A set of Azure and Terraform quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/azure/terraform/",
-    "relUrl": "/docs/azure/terraform/"
-  }
-  ,"41": {
-    "title": "Unsorted",
-    "content": "Unsorted . These items may move elsewhere. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/unsorted/",
-    "relUrl": "/docs/unsorted/"
-  }
-  ,"42": {
-    "title": "Web",
-    "content": "Spring Web . A set of Spring Web quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/spring/web/",
-    "relUrl": "/docs/spring/web/"
-  }
-  ,"43": {
-    "title": "CLI (Azure)",
-    "content": "CLI . A set of Azure CLI quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/azure/cli/",
-    "relUrl": "/docs/azure/cli/"
-  }
-  ,"44": {
-    "title": "Configuration",
-    "content": "Spring Boot Configuration .",
-    "url": "https://albertattard.github.io/quickhacks/docs/spring/configuration/",
-    "relUrl": "/docs/spring/configuration/"
-  }
-  ,"45": {
-    "title": "End-to-End Testing",
-    "content": "End-to-End Testing . A set of End-to-End testing quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/testing/end-to-end/",
-    "relUrl": "/docs/testing/end-to-end/"
-  }
-  ,"46": {
-    "title": "Testing",
-    "content": "Testing . A set of testing quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/testing/",
-    "relUrl": "/docs/testing/"
-  }
-  ,"47": {
-    "title": "Testing (Vue)",
-    "content": "Testing (Vue) .",
-    "url": "https://albertattard.github.io/quickhacks/docs/vue/testing/",
-    "relUrl": "/docs/vue/testing/"
-  }
-  ,"48": {
-    "title": "Spring",
-    "content": "Spring . A set of Spring quickhacks. .",
-    "url": "https://albertattard.github.io/quickhacks/docs/spring/",
-    "relUrl": "/docs/spring/"
-  }
-  ,"49": {
+  ,"28": {
     "title": "Home",
     "content": "Quickhacks . Many times I had to look for an old example where I did something similar, like create an S3 bucket using Terraform. I have decided to compile a list of code fragments and short examples and called this compilation quickhacks. I got the name from the Cyberpunk 2077 game. As a netrunner you can use quickhacks to defeat your challenges and proceed. I love that game despite its many flaws. . The quickhacks are not meant to be a tutorial nor to provide detailed descriptions. Instead, these are meant to be a quick reference of code fragments. .",
     "url": "https://albertattard.github.io/quickhacks/",
     "relUrl": "/"
   }
-  ,"50": {
+  ,"29": {
+    "title": "Docker",
+    "content": "Docker . A set of docker and docker-compose quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/docker/",
+    "relUrl": "/docs/docker/"
+  }
+  ,"30": {
     "title": "AWS",
     "content": "AWS .",
     "url": "https://albertattard.github.io/quickhacks/docs/aws/",
     "relUrl": "/docs/aws/"
+  }
+  ,"31": {
+    "title": "Gradle",
+    "content": "Gradle . A set of Gradle and Gradle Wrapper quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/gradle/",
+    "relUrl": "/docs/gradle/"
+  }
+  ,"32": {
+    "title": "Spring",
+    "content": "Spring . A set of Spring quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/spring/",
+    "relUrl": "/docs/spring/"
+  }
+  ,"33": {
+    "title": "CLI (AWS)",
+    "content": "CLI . A set of AWS CLI quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/aws/cli/",
+    "relUrl": "/docs/aws/cli/"
+  }
+  ,"34": {
+    "title": "Configuration",
+    "content": "Spring Boot Configuration .",
+    "url": "https://albertattard.github.io/quickhacks/docs/spring/configuration/",
+    "relUrl": "/docs/spring/configuration/"
+  }
+  ,"35": {
+    "title": "Web",
+    "content": "Spring Web . A set of Spring Web quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/spring/web/",
+    "relUrl": "/docs/spring/web/"
+  }
+  ,"36": {
+    "title": "Testing (Vue)",
+    "content": "Testing (Vue) .",
+    "url": "https://albertattard.github.io/quickhacks/docs/vue/testing/",
+    "relUrl": "/docs/vue/testing/"
+  }
+  ,"37": {
+    "title": "CLI (Azure)",
+    "content": "CLI . A set of Azure CLI quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/azure/cli/",
+    "relUrl": "/docs/azure/cli/"
+  }
+  ,"38": {
+    "title": "Terraform (AWS)",
+    "content": "Terraform . A set of AWS and Terraform quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/aws/terraform/",
+    "relUrl": "/docs/aws/terraform/"
+  }
+  ,"39": {
+    "title": "Unsorted",
+    "content": "Unsorted . These items may move elsewhere. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/unsorted/",
+    "relUrl": "/docs/unsorted/"
+  }
+  ,"40": {
+    "title": "Git",
+    "content": "Git . A set of Git quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/git/",
+    "relUrl": "/docs/git/"
+  }
+  ,"41": {
+    "title": "Azure",
+    "content": "Azure .",
+    "url": "https://albertattard.github.io/quickhacks/docs/azure/",
+    "relUrl": "/docs/azure/"
+  }
+  ,"42": {
+    "title": "Java",
+    "content": "Java . A set of Java quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/java/",
+    "relUrl": "/docs/java/"
+  }
+  ,"43": {
+    "title": "Vue",
+    "content": "Vue . A set of Vue quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/vue/",
+    "relUrl": "/docs/vue/"
+  }
+  ,"44": {
+    "title": "Micronaut (Azure)",
+    "content": "Micronaut . A set of Micronaut quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/azure/micronaut/",
+    "relUrl": "/docs/azure/micronaut/"
+  }
+  ,"45": {
+    "title": "Functional",
+    "content": "Functional . A set of functional quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/java/functional/",
+    "relUrl": "/docs/java/functional/"
+  }
+  ,"46": {
+    "title": "End-to-End Testing",
+    "content": "End-to-End Testing . A set of End-to-End testing quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/testing/end-to-end/",
+    "relUrl": "/docs/testing/end-to-end/"
+  }
+  ,"47": {
+    "title": "Docker (Spring)",
+    "content": "Docker and Spring . A set of Docker and Spring quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/spring/docker/",
+    "relUrl": "/docs/spring/docker/"
+  }
+  ,"48": {
+    "title": "Testing",
+    "content": "Testing . A set of testing quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/testing/",
+    "relUrl": "/docs/testing/"
+  }
+  ,"49": {
+    "title": "Java 11",
+    "content": "Java 11 . A set of Java 11 quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/java/java-11/",
+    "relUrl": "/docs/java/java-11/"
+  }
+  ,"50": {
+    "title": "Terraform (Azure)",
+    "content": "Terraform . A set of Azure and Terraform quickhacks. .",
+    "url": "https://albertattard.github.io/quickhacks/docs/azure/terraform/",
+    "relUrl": "/docs/azure/terraform/"
   }
   ,"51": {
     "title": "Install Azure CLI",
@@ -481,72 +481,78 @@
     "relUrl": "/docs/java/sdkman/"
   }
   ,"81": {
+    "title": "Set User Details",
+    "content": "Set User Details . References . https://git-scm.com/docs/git-config#Documentation/git-config.txt-username | . Change user details . Change the user details for repository . $ git config user.name &quot;Albert Attard&quot; $ git config user.email albertattard@gmail.com . | List repository configuration . $ git config --local --list . | . Versions . Git . $ git --version git version 2.30.1 (Apple Git-130) . |",
+    "url": "https://albertattard.github.io/quickhacks/docs/git/set-user-details/",
+    "relUrl": "/docs/git/set-user-details/"
+  }
+  ,"82": {
     "title": "Show (v-show)",
     "content": "Show (v-show) . References . https://www.vuemastery.com/courses/intro-to-vue-3/conditional-rendering-vue3 | . File: index.html . {% highlight html %} {% raw_include quickhacks/vue/show/index.html %} {% endhighlight %} . File: main.js . {% highlight js %} {% raw_include quickhacks/vue/show/main.js %} {% endhighlight %} .",
     "url": "https://albertattard.github.io/quickhacks/docs/vue/show/",
     "relUrl": "/docs/vue/show/"
   }
-  ,"82": {
+  ,"83": {
     "title": "Spotbugs",
     "content": "Spotbugs . {% include custom/pending.html details=”I am still working on this one. I am still trying to figure out how to get this working well” %} . I had better luck with [error prone]({{ “/docs/gradle/error-prone/” | absolute_url }}) so far, especially with the NullPointerException detection. . References . https://plugins.gradle.org/plugin/com.github.spotbugs | https://spotbugs.readthedocs.io/en/latest/gradle.html | https://github.com/spotbugs/spotbugs/releases | . File: build.gradle . {% highlight gradle %} {% raw_include quickhacks/gradle/spotbugs/build.gradle %} {% endhighlight %} . File: src/main/java/quickhacks/Examples.java . {% highlight java %} {% raw_include quickhacks/gradle/spotbugs/src/main/java/quickhacks/Examples.java %} {% endhighlight %} . Run Spotbugs checks . $ ./gradlew check . Versions . Gradle . $ ./gradlew --version Gradle 7.1.1 . | Java . $ java --version openjdk 16 2021-03-16 OpenJDK Runtime Environment AdoptOpenJDK (build 16+36) OpenJDK 64-Bit Server VM AdoptOpenJDK (build 16+36, mixed mode, sharing) . |",
     "url": "https://albertattard.github.io/quickhacks/docs/gradle/spotbugs/",
     "relUrl": "/docs/gradle/spotbugs/"
   }
-  ,"83": {
+  ,"84": {
     "title": "Spotless",
     "content": "Spotless . Spotless is a versatile and flexible code formatter that also provides a gradle plugin. This hooks to the build and fails it if the formatting does not abide to the configured format. . References . https://github.com/diffplug/spotless | https://github.com/google/google-java-format | . File: build.gradle . {% highlight gradle %} {% raw_include quickhacks/gradle/spotless/build.gradle %} {% endhighlight %} . File: src/main/java/quickhacks/Main.java . {% highlight java %} {% raw_include quickhacks/gradle/spotless/src/main/java/quickhacks/Main.java %} {% endhighlight %} . Run Spotless formatter . $ ./gradlew spotlessApply . Run Spotless checks . The build will fail if one or more files do not adhere to the required format. Run spotlessApply to format the code first. . $ ./gradlew check . Versions . Gradle . $ ./gradlew --version Gradle 7.1.1 . | Java . $ java --version openjdk 16 2021-03-16 OpenJDK Runtime Environment AdoptOpenJDK (build 16+36) OpenJDK 64-Bit Server VM AdoptOpenJDK (build 16+36, mixed mode, sharing) . |",
     "url": "https://albertattard.github.io/quickhacks/docs/gradle/spotless/",
     "relUrl": "/docs/gradle/spotless/"
   }
-  ,"84": {
+  ,"85": {
     "title": "Spring Security CORS",
     "content": "Spring Security CORS . {% include custom/pending.html details=”I am still working on this one” %} .",
     "url": "https://albertattard.github.io/quickhacks/docs/spring/web/spring-security-cors/",
     "relUrl": "/docs/spring/web/spring-security-cors/"
   }
-  ,"85": {
+  ,"86": {
     "title": "Spring Security Oauth2",
     "content": "Spring Security Oauth2 . File: src/main/java/quickhacks/Oauth2Configuration.java . {% highlight java %} {% raw_include quickhacks/spring/web/spring-security-oauth2/src/main/java/quickhacks/Oauth2Configuration.java %} {% endhighlight %} . File: src/main/resources/application.yaml . {% highlight yaml %} {% raw_include quickhacks/spring/web/spring-security-oauth2/src/main/resources/application.yaml %} {% endhighlight %} . Versions . Java . $ java -version openjdk 16 2021-03-16 OpenJDK Runtime Environment AdoptOpenJDK (build 16+36) OpenJDK 64-Bit Server VM AdoptOpenJDK (build 16+36, mixed mode, sharing) . | Gradle . $ ./gradlew --version Gradle 7.1.1 . | .",
     "url": "https://albertattard.github.io/quickhacks/docs/spring/web/spring-security-oauth2/",
     "relUrl": "/docs/spring/web/spring-security-oauth2/"
   }
-  ,"86": {
+  ,"87": {
     "title": "SSH Authentication",
     "content": "SSH Authentication . Setup . Create SSH . Pick the key type supported by your remote repository. Not all repositories support all types of keys. Put your email address as a comment to the key, as recommended by GitHub . . Use the Edwards-curve Digital Signature Algorithm (Ed25519 is the EdDSA signature scheme using SHA-512 (SHA-2) and Curve25519). This is only supported by newer repositories. . $ ssh-keygen -t ed25519 -C &quot;albertattard@gmail.com&quot; . | Use the older RSA Algorithm, supported by most repositories . $ ssh-keygen -t rsa -C &quot;albertattard@gmail.com&quot; . | . Do not use one SSH key for all repositories. Instead, create one for every environment, such as . Personal things | Profession/Work development environment | Profession/Work production environment | . You can do that by creating as many SSH key-pairs as needed. . Secure your private key with a password. . Following is an example . $ ssh-keygen -t rsa -C &quot;albertattard@gmail.com&quot; Generating public/private rsa key pair. Enter file in which to save the key (/Users/albertattard/.ssh/id_rsa): /Users/albertattard/.ssh/id_rsa_dev Enter passphrase (empty for no passphrase): Enter same passphrase again: Your identification has been saved in /Users/albertattard/.ssh/id_rsa_dev. Your public key has been saved in /Users/albertattard/.ssh/id_rsa_dev.pub. The key fingerprint is: SHA256:Fvh13Ra2aOJuehYpEu2sec7RzQzc5MckQMe2ZuL1nqw albertattard@gmail.com The key&#39;s randomart image is: +[RSA 3072]-+ | .o.. o | | . o+o.o| | . o ..o=ooo| | o +oo*=+. | | S .+*o.o | | o +o+= .. | | +..+.+o .| | o..+o + | | o+o E. | +-[SHA256]--+ . | Upload the public key to the remote repository. . Copy Public Key to the clipboard . $ pbcopy &lt; ~/.ssh/id_rsa_dev.pub . Add the SSH Key to the repo . | Configure SSH . Edit the ~/.ssh/config file and add an entry so that GIT can use SSH to authenticate . $ vi ~/.ssh/config . Add the following . Host dev-project AddKeysToAgent yes UseKeychain yes User git Hostname github.com IdentityFile ~/.ssh/id_rsa_dev IdentitiesOnly yes . Using the above configuration, the path dev-project:albertattard/quickhacks-source.git is equivalent to the following: git@github.com:albertattard/quickhacks-source.git, and the private key file ~/.ssh/id_rsa_dev. . | Access the repository . $ git clone dev-project:albertattard/quickhacks-source.git . | Versions . Git . $ git --version git version 2.30.1 (Apple Git-130) . | SSH . $ ssh -V OpenSSH_8.1p1, LibreSSL 2.7.3 . |",
     "url": "https://albertattard.github.io/quickhacks/docs/git/ssh-authentication/",
     "relUrl": "/docs/git/ssh-authentication/"
   }
-  ,"87": {
+  ,"88": {
     "title": "Stroop effect",
     "content": "Stroop effect . References . https://en.wikipedia.org/wiki/Stroop_effect | . Stroop effect . In psychology, the Stroop effect is the delay in reaction time between congruent and incongruent stimuli. . The effect has been used to create a psychological test (the Stroop test) that is widely used in clinical practice and investigation. . A basic task that demonstrates this effect occurs when there is a mismatch between the name of a color (e.g., “blue”, “green”, or “red”) and the color it is printed on (i.e., the word “red” printed in blue ink instead of red ink). When asked to name the color of the word it takes longer and is more prone to errors when the color of the ink does not match the name of the color. .",
     "url": "https://albertattard.github.io/quickhacks/docs/unsorted/stroop-effect/",
     "relUrl": "/docs/unsorted/stroop-effect/"
   }
-  ,"88": {
+  ,"89": {
     "title": "Structurizr DSL",
     "content": "Structurizr DSL . References . https://github.com/structurizr/dsl | . Structurizr DSL . Structurizr DSL is a way to create Structurizr software architecture models based upon the C4 model using a textual domain specific language (DSL). The Structurizr DSL has appeared on the ThoughtWorks Tech Radar - Techniques - Diagrams as code. .",
     "url": "https://albertattard.github.io/quickhacks/docs/unsorted/Structurizr%20DSL/",
     "relUrl": "/docs/unsorted/Structurizr DSL/"
   }
-  ,"89": {
+  ,"90": {
     "title": "Task Dependencies",
     "content": "Task Dependencies . References . https://plugins.gradle.org/plugin/org.barfuin.gradle.taskinfo | https://youtu.be/Vxfk7OsEekA?t=105 | . File: build.gradle . {% highlight gradle %} {% raw_include quickhacks/gradle/task-dependencies/build.gradle %} {% endhighlight %} . Display the Task Dependencies . $ ./gradlew tiTree build &gt; Task :tiTree :build (org.gradle.api.DefaultTask) + :assemble (org.gradle.api.DefaultTask) | ` :jar (org.gradle.api.tasks.bundling.Jar) | ` :classes (org.gradle.api.DefaultTask) | + :compileJava (org.gradle.api.tasks.compile.JavaCompile) | ` :processResources (org.gradle.language.jvm.tasks.ProcessResources) ` :check (org.gradle.api.DefaultTask) ` :test (org.gradle.api.tasks.testing.Test) + :classes (org.gradle.api.DefaultTask) | + :compileJava (org.gradle.api.tasks.compile.JavaCompile) | ` :processResources (org.gradle.language.jvm.tasks.ProcessResources) ` :testClasses (org.gradle.api.DefaultTask) + :compileTestJava (org.gradle.api.tasks.compile.JavaCompile) | ` :classes (org.gradle.api.DefaultTask) | + :compileJava (org.gradle.api.tasks.compile.JavaCompile) | ` :processResources (org.gradle.language.jvm.tasks.ProcessResources) ` :processTestResources (org.gradle.language.jvm.tasks.ProcessResources) BUILD SUCCESSFUL in 768ms 1 actionable task: 1 executed . Versions . Gradle . $ ./gradlew --version Gradle 7.1.1 . |",
     "url": "https://albertattard.github.io/quickhacks/docs/gradle/task-dependencies/",
     "relUrl": "/docs/gradle/task-dependencies/"
   }
-  ,"90": {
+  ,"91": {
     "title": "Tricorder",
     "content": "Tricorder . References . https://research.google/pubs/pub43322/ | . Tricorder . Static analysis tools help developers find bugs, improve code readability, and ensure consistent style across a project. However, these tools can be difficult to smoothly integrate with each other and into the developer workflow, particularly when scaling to large codebases. We present Tricorder, a program analysis platform aimed at building a data-driven ecosystem around program analysis. We present a set of guiding principles for our program analysis tools and a scalable architecture for an analysis platform implementing these principles. We include an empirical, in-situ evaluation of the tool as it is used by developers across Google that shows the usefulness and impact of the platform. .",
     "url": "https://albertattard.github.io/quickhacks/docs/unsorted/tricorder/",
     "relUrl": "/docs/unsorted/tricorder/"
   }
-  ,"91": {
+  ,"92": {
     "title": "Undo Commits both Locally and Remote",
     "content": "Undo Commits both Locally and Remote . References . https://git-scm.com/docs/git-revert#Documentation/git-revert.txt—no-commit | https://git-scm.com/docs/git-log#Documentation/git-log.txt—oneline | . Git Commands . Revert the last 2 commits . There are two ways about this. . Using range . $ git revert --no-commit HEAD~2.. . The .. represents a range, in this case between HEAD~2 and HEAD, which is equivalent to HEAD~2..HEAD. . | Specify each commit . Obtain the commit ids using the log. . $ git log --oneline . Then revert these commit in order, starting from the last commit . $ git revert --no-commit &lt;last-commit-id&gt; $ git revert --no-commit &lt;second-last-commit-id&gt; . | . The -n, or --no-commit, options will revert the changes without applying a commit. . | Commit reverts . $ git commit -S -m &quot;The reason why the revert was applied&quot; . | Push changes to the remote . $ git push . | . Versions . Git . $ git --version git version 2.30.1 (Apple Git-130) . | .",
     "url": "https://albertattard.github.io/quickhacks/docs/git/undo-commits-both-locally-and-remote/",
     "relUrl": "/docs/git/undo-commits-both-locally-and-remote/"
   }
-  ,"92": {
+  ,"93": {
     "title": "VM (Publicly Accessible)",
     "content": "Virtual Machine (Publicly Accessible) . {% include custom/pending.html details=”I am still working on this one” %} . Terraform . File: terraform.tf . {% highlight terraform %} {% raw_include quickhacks/azure/terraform/vm-publicly-accessible/terraform.tf %} {% endhighlight %} . File: providers.tf . {% highlight terraform %} {% raw_include quickhacks/azure/terraform/vm-publicly-accessible/providers.tf %} {% endhighlight %} . File: main.tf . {% highlight terraform %} {% raw_include quickhacks/azure/terraform/vm-publicly-accessible/main.tf %} {% endhighlight %} . File: output.tf . {% highlight terraform %} {% raw_include quickhacks/azure/terraform/vm-publicly-accessible/output.tf %} {% endhighlight %} . SSH to VM . Connect to the VM instance using the private key . $ . Versions . Terraform . $ terraform --version Terraform v0.15.0 . | SSH . $ ssh -V OpenSSH_8.1p1, LibreSSL 2.7.3 . |",
     "url": "https://albertattard.github.io/quickhacks/docs/azure/terraform/vm-publicly-accessible/",
